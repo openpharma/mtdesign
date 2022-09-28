@@ -1,0 +1,18 @@
+Alpha <- NULL
+AveSizeAlt <- NULL
+AveSizeNull <- NULL
+Beta <- NULL
+Design <- NULL
+Label <- NULL
+Type1 <- NULL
+Type2 <- NULL
+nStage1 <- NULL
+nTotal <- NULL
+p0 <- NULL
+p1 <- NULL
+pReject <- NULL
+pResponse <- NULL
+rFutility<- NULL
+rSuccess <- NULL
+rTotal <- NULL
+Chunk <- NULL

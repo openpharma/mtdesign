@@ -1,0 +1,34 @@
+Package: mtdesign
+Type: Package
+Title: Mander and Thompson Designs
+Version: 0.1.0
+Author: John Kirkpatrick <john.kirkpatrick@roche.com>
+Maintainer: John Kirkpatrick <john.kirkpatrick@roche.com>
+Description: Implements Mander & Thompson's (2010) methods for two-stage designs
+    optimal under the alternative hypothesis for phase II [cancer] trials.  Also
+    provides an implementation of Simon's (1989) original methodology and allows 
+    exploration of the operating characteristics of sub-optimal designs.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+URL: https://github.roche.com/kirkpatj/mtdesign
+BugReports: https://github.roche.com/kirkpatj/mtdesign/issues
+RoxygenNote: 7.1.2
+Imports: 
+    dplyr,
+    ggplot2,
+    logger,
+    magrittr,
+    methods,
+    Rcpp,
+    rlang,
+    tibble,
+    tidyr
+LinkingTo: 
+    Rcpp,
+    BH
+Suggests: 
+    covr,
+    parallel,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
