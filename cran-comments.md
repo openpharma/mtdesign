@@ -1,4 +1,4 @@
-## R CMD check results
+# R CMD check results
 
 Duration: 5m 35.9s
 
