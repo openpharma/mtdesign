@@ -6,3 +6,6 @@
 ^codecov.yml$
 ^mtdesign.bib$
 ^LICENSE.md$
+.lintr
+^_pkgdown\.yml$
+coverage.*

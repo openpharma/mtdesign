@@ -1,0 +1,11 @@
+---
+url: https://openpharma.github.io/mtdesign
+
+template:
+  bootstrap: 5
+  bootswatch: cerulean
+
+navbar:
+  right:
+    - icon: fa-github
+      href: https://github.com/openpharma/mtdesign
