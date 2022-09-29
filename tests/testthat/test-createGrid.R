@@ -1,5 +1,5 @@
 test_that("createGrid works", {
-  x <- createGrid(p0=0.1, p1=0.5, alpha=0.05, beta=0.2)
+  x <- createGrid(p0 = 0.1, p1 = 0.5, alpha = 0.05, beta = 0.2)
 
   # Return type
   expect_true(is(x, "tbl"))
@@ -25,7 +25,7 @@ test_that("createGrid works", {
   # All rows unique
   expect_identical(x, x %>% dplyr::distinct())
 
-  x <- createGrid(p0=0.1, p1=0.5, alpha=0.05, beta=0.2, mander=FALSE)
+  x <- createGrid(p0 = 0.1, p1 = 0.5, alpha = 0.05, beta = 0.2, mander = FALSE)
 
   # Return type
   expect_true(is(x, "tbl"))
