@@ -36,6 +36,11 @@ No other notes.
 
 ### Fedora Linux 
 * checking HTML version of manual ... NOTE Skipping checking HTML validation: no command 'tidy' found
+
+  I cannot add Tidy to the PATH, nor update Tidy on the external Fedora Linux server.
+
+## Downstream dependencies
+There are currently no downstream dependencies for this package: it is a new package.
   
 ## Other
 

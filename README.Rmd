@@ -19,7 +19,6 @@ knitr::opts_chunk$set(
 # mtdesign
 
 <!-- badges: start -->
-[![Codecov test coverage](https://codecov.io/gh/kirkpatj/mtdesign/branch/master/graph/badge.svg)](https://app.codecov.io/gh/kirkpatj/mtdesign?branch=master)
 [![CRAN status](https://www.r-pkg.org/badges/version/mtdesign)](https://CRAN.R-project.org/package=mtdesign)
 <!-- badges: end -->
 
