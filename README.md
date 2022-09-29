@@ -16,20 +16,21 @@ status](https://www.r-pkg.org/badges/version/mtdesign)](https://CRAN.R-project.o
 The package `mtdesign` provides implementations of both Simon (1989) and
 Mander & Thompson (2010). Other implementations of Simon’s methods are
 available - for example, the `ph2simon` function in the `clinfun`
-package (Seshan 2018), but these do not provide as easy access to
-non-optimal solutions as `mtdesign` does. I am not aware of any other
-R-based implementaions of Mander & Thompson’s extension to Simon.
+package (Seshan 2018), but these do not provide easy access to
+non-optimal solutions in the way that `mtdesign` does. I am not aware of
+any other R-based implementations of Mander & Thompson’s extension to
+Simon.
 
 ## Installation
 
-Once available on CRAN, you can install `mtdesign` in the usualy way:
+Once available on CRAN, you can install `mtdesign` in the usual way:
 
 `install.packages("mtdesign")`
 
-You can install the development version of mtdesign from
-[GitHub](https://www.github.com/Roche/mtdesign) with:
+You can install the development version of `mtdesign` from
+[GitHub](https://www.github.com/openpharma/mtdesign) with:
 
-`devtools::install_github("Roche/mtdesign")`
+`devtools::install_github("openpharma/mtdesign")`
 
 ## Example
 
@@ -52,7 +53,6 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 
 simonDesign <- obtainDesign(p0=0.05, p1=0.25, alpha=0.05, beta=0.2, mander=FALSE, parallel=FALSE)
-#> [1] "isMander: FALSE"
 
 simonDesign %>% 
   select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
@@ -82,7 +82,6 @@ change to the calls.
 
 ``` r
 manderDesign <- obtainDesign(p0=0.05, p1=0.25, alpha=0.05, beta=0.2)
-#> [1] "isMander: TRUE"
 
 manderDesign %>% 
   select(-Alpha, -Beta, -p0, -p1) %>% 
@@ -114,9 +113,8 @@ there a (slightly) sub-optimal design that has n<sub>1</sub> = 8, n =
 x <- createGrid(p0=0.05, p1=0.25, alpha=0.05, beta=0.2, mander=FALSE)
 
 y <- x %>% filter(nStage1 == 8, nTotal == 16)
-z <- obtainDesign(grid=y)
+z <- y %>% obtainDesign()
 #> Warning: No acceptable designs were found.
-#> [1] "isMander: FALSE"
 if (nrow(z) == 0) {
   print("No acceptable designs were found.")
 } else {  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
@@ -130,7 +128,7 @@ if (nrow(z) == 0) {
 No, there isn’t. How close can we get?
 
 ``` r
-z1 <- augmentGrid(y)
+z1 <- y %>% augmentGrid()
 
 bestSize <- z1 %>%
               filter(Type1 < Alpha) %>%
