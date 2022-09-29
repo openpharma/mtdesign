@@ -13,7 +13,7 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/openpharma/mtdesign
 BugReports: https://github.com/openpharma/mtdesign/issues
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Imports: 
     dplyr,
     ggplot2,
