@@ -50,11 +50,11 @@ library(dplyr)
 #> 
 #>     intersect, setdiff, setequal, union
 
-simonDesign <- obtainDesign(p0=0.05, p1=0.25, alpha=0.05, beta=0.2, mander=FALSE, parallel=FALSE)
+simonDesign <- obtainDesign(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE, parallel = FALSE)
 
-simonDesign %>% 
-  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-  kable(digits=c(0, 0, 0, 0, 3, 3, 2, 1, NA))
+simonDesign %>%
+  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+  kable(digits = c(0, 0, 0, 0, 3, 3, 2, 1, NA))
 ```
 
 | nTotal | nStage1 | rTotal | rFutility | Type1 | Type2 | PETNull | AveSizeNull | Criterion |
@@ -79,11 +79,11 @@ Obtaining the equivalent Mander & Thompson designs requires only a small
 change to the calls.
 
 ```r
-manderDesign <- obtainDesign(p0=0.05, p1=0.25, alpha=0.05, beta=0.2)
+manderDesign <- obtainDesign(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2)
 
-manderDesign %>% 
-  select(-Alpha, -Beta, -p0, -p1) %>% 
-  kable(digits=c(0, 0, 0, 0, 3, 3, 2, 2, 2, 1, NA))
+manderDesign %>%
+  select(-Alpha, -Beta, -p0, -p1) %>%
+  kable(digits = c(0, 0, 0, 0, 3, 3, 2, 2, 2, 1, NA))
 ```
 
 | nTotal | nStage1 | rTotal | rFutility | rSuccess | Type1 | Type2 | PETNull | PETAlt | AveSizeNull | AveSizeAlt | Criterion   |
@@ -94,6 +94,7 @@ manderDesign %>%
 |     16 |      12 |      2 |         0 |        2 | 0.043 |  0.20 |    0.56 |   0.64 |        13.8 |         NA | minimaxAlt  |
 
 ```r
+
 powerPlot(manderDesign)
 ```
 
@@ -108,17 +109,18 @@ there a (slightly) sub-optimal design that has n<sub>1</sub> = 8, n =
 16?
 
 ```r
-x <- createGrid(p0=0.05, p1=0.25, alpha=0.05, beta=0.2, mander=FALSE)
+x <- createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE)
 
 y <- x %>% filter(nStage1 == 8, nTotal == 16)
 z <- y %>% obtainDesign()
 #> Warning: No acceptable designs were found.
 if (nrow(z) == 0) {
   print("No acceptable designs were found.")
-} else {  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-  z %>% 
-    select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-    kable(digits=c(0, 0, 0, 0, 3, 3, 2, 1, NA))
+} else {
+  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+    z() %>%
+    select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+    kable(digits = c(0, 0, 0, 0, 3, 3, 2, 1, NA))
 }
 #> [1] "No acceptable designs were found."
 ```
@@ -129,12 +131,14 @@ No, there isn’t. How close can we get?
 z1 <- y %>% augmentGrid()
 
 bestSize <- z1 %>%
-              filter(Type1 < Alpha) %>%
-              slice(which.min(Beta)) 
+  filter(Type1 < Alpha) %>%
+  slice(which.min(Beta))
 bestSize %>%
-  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-  kable(caption="Best sub-optimal design with required significance level",
-        digits=c(0, 0, 0, 0, 3, 3, 2, 1, NA))
+  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+  kable(
+    caption = "Best sub-optimal design with required significance level",
+    digits = c(0, 0, 0, 0, 3, 3, 2, 1, NA)
+  )
 ```
 
 | nTotal | nStage1 | rTotal | rFutility | Type1 | Type2 | PETNull | AveSizeNull |
@@ -144,14 +148,17 @@ bestSize %>%
 Best sub-optimal design with required significance level
 
 ```r
+
 bestPower <- z1 %>%
-               filter(Type2 < Beta) %>%
-               slice(which.min(Alpha))
+  filter(Type2 < Beta) %>%
+  slice(which.min(Alpha))
 
 bestPower %>%
-  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-  kable(caption="Best sub-optimal design with required power",
-        digits=c(0, 0, 0, 0, 3, 3, 2, 1, NA))
+  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+  kable(
+    caption = "Best sub-optimal design with required power",
+    digits = c(0, 0, 0, 0, 3, 3, 2, 1, NA)
+  )
 ```
 
 | nTotal | nStage1 | rTotal | rFutility | Type1 | Type2 | PETNull | AveSizeNull |
@@ -172,9 +179,9 @@ The power curve for each of these designs can be compared with that for
 the globally optimal design.
 
 ```r
-plotData1 <- simonDesign %>% 
-               filter(Criterion == "optimal") %>% 
-               bind_rows(list(bestSize, bestPower))
+plotData1 <- simonDesign %>%
+  filter(Criterion == "optimal") %>%
+  bind_rows(list(bestSize, bestPower))
 powerPlot(plotData1)
 ```
 
@@ -185,14 +192,14 @@ powerPlot(plotData1)
 The `mtdesign` package consists of three main functions:
 
 * `createGrid` creates the grid (of nStage1, rFutility, nTotal and
-  rTotal for Simon’s design or nStage1, rFutility, rSuccess, nTotal
-  and rTotal for a Mander & Thompson design) over which the brute
-  force search for the required design(s) is conducted
-* `augmentGrid`takes a grid created by `createGrid` and adds columns
-  for probability of early termination, Type 1 error, Type 2 error and
+  rTotal for Simon’s design or nStage1, rFutility, rSuccess, nTotal and
+  rTotal for a Mander & Thompson design) over which the brute force
+  search for the required design(s) is conducted
+* `augmentGrid`takes a grid created by `createGrid` and adds columns for
+  probability of early termination, Type 1 error, Type 2 error and
   expected sample size to it.
-* `obtainDesign` takes an augmented grid and identifies the optimal
-  and minimax designs
+* `obtainDesign` takes an augmented grid and identifies the optimal and
+  minimax designs
 
 ## Error and warning messages and logging
 
@@ -217,11 +224,11 @@ attempt to speed up the evaluation of candidate designs.
 The `augmentGrid` function allows users some control over the
 parallelisation process:
 
-* The `parallel` parameter defaults to `TRUE` and defines whether or
-  not paralellisation is to be used.
+* The `parallel` parameter defaults to `TRUE` and defines whether or not
+  paralellisation is to be used.
 * The `cores` parameter specifies how many cores are to be used. The
-  default value, `NA` tells `mtdesign` to use all available (as
-  defined by `parallel::detectCores()`), cores.
+  default value, `NA` tells `mtdesign` to use all available (as defined
+  by `parallel::detectCores()`), cores.
 * The `minChunkSize` determines the smallest grid of candidate designs
   that will trigger paralellisation. The default value is `100000`.
 
@@ -237,7 +244,7 @@ more rows, a warning is produced.
 If, when installing or using the `mtdesign` package, you get an error
 regarding a syntax error in an`.hpp` file, similar to the following
 
-```r
+```
 .../BH/include/boost/math/tools/fraction.hpp:84:48: error: ‘long double’ is not a class, struct, or union type using value_type = typename T::value_type;
 ```
 
@@ -247,8 +254,8 @@ solutions that I know of:
 
 * Upgrade g++
 * Downgrade the version of the `BH` package you are using. The
-  appropriate package version depends on the version of the g++
-  compiler you are using.
+  appropriate package version depends on the version of the g++ compiler
+  you are using.
 
 ## References
 
