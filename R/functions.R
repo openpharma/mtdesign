@@ -440,7 +440,7 @@ powerPlot <- function(grid, probs = seq(0, 1, 0.01)) {
 
   if (isManderGrid(grid)) {
     plotData <- grid %>%
-      dplyr::mutate(Design = c(1:nrow(grid))) %>%
+      dplyr::mutate(Design = c(seq(nrow(grid)))) %>%
       dplyr::group_by(Design) %>%
       dplyr::mutate(Label = paste0("(", rFutility, " ", rSuccess, ")/", nStage1, " ", rTotal, "/", nTotal)) %>%
       dplyr::select(Design, Label, nStage1, rFutility, rSuccess, nTotal, rTotal, Alpha, Beta, p0, p1) %>%
@@ -453,7 +453,7 @@ powerPlot <- function(grid, probs = seq(0, 1, 0.01)) {
       dplyr::ungroup()
   } else {
     plotData <- grid %>%
-      dplyr::mutate(Design = 1:nrow(grid)) %>%
+      dplyr::mutate(Design = seq(nrow(grid))) %>%
       dplyr::group_by(Design) %>%
       dplyr::mutate(Label = paste0(rFutility, "/", nStage1, " ", rTotal, "/", nTotal)) %>%
       dplyr::select(Design, Label, nStage1, rFutility, nTotal, rTotal, Alpha, Beta, p0, p1) %>%
