@@ -219,7 +219,8 @@ augmentGrid <- function(d, parallel=TRUE, cores=NA, minChunkSize=100000) {
           "Parallelisation has been requested, but the grid size [", k,
           "] is less than the minimum chunk size [", minChunkSize,
           "].  Parallelisation will not occur"
-        )
+        ),
+        namespace="mtdesign"
       )
       parallel <- FALSE
     }

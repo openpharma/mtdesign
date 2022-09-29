@@ -1,2 +1,8 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.github$
+^README.Rmd
+^cran-comments\.md$
+^codecov.yml$
+^mtdesign.bib$
+^LICENSE.md$

@@ -11,8 +11,8 @@ Description: Implements Mander & Thompson's (2010) methods for two-stage designs
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
-URL: https://github.roche.com/kirkpatj/mtdesign
-BugReports: https://github.roche.com/kirkpatj/mtdesign/issues
+URL: https://github.com/openpharma/mtdesign
+BugReports: https://github.com/openpharma/mtdesign/issues
 RoxygenNote: 7.1.2
 Imports: 
     dplyr,
