@@ -244,7 +244,7 @@ more rows, a warning is produced.
 If, when installing or using the `mtdesign` package, you get an error
 regarding a syntax error in an`.hpp` file, similar to the following
 
-```
+```r
 .../BH/include/boost/math/tools/fraction.hpp:84:48: error: ‘long double’ is not a class, struct, or union type using value_type = typename T::value_type;
 ```
 
