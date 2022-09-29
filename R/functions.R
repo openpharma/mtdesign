@@ -47,7 +47,7 @@ isAugmented <- function(grid) {
 #' @param beta the desired type 2 error rate
 #' @param power an alternative to \code{beta}
 #' @param nMin the lower bound for the search grid.  If \code{NA},
-#' \code{searchBounds} is called to privide an appropriate value
+#' \code{searchBounds} is called to provide an appropriate value
 #' @param nMax the lower bound for the search grid.  If \code{NA},
 #' \code{searchBounds} is called to provide an appropriate value
 #' @param mander is a Mander & Thompson or a Simon's design required?
@@ -293,7 +293,7 @@ augmentGrid <- function(d, parallel=TRUE, cores=NA, minChunkSize=100000) {
 #'  \code{NULL} then \code{p0}, \code{p1}, \code{alpha} and \code{beta} are
 #'  ignored
 #' @param p0 the response rate under the null hypothesis
-#' @param p1 the response rate under the alternte hypothesis
+#' @param p1 the response rate under the alternate hypothesis
 #' @param alpha the desired (one-sided) type 1 error rate
 #' @param beta the desired type 2 error rate
 #' @param fullGrid should the full grid of all possible designs be returned, or

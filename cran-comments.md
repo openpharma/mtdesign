@@ -4,7 +4,7 @@ Duration: 5m 35.9s
 
 ❯ checking top-level files ... NOTE
   Non-standard files/directories found at top level:
-    ‘codecov.yml’ ‘cran-comments.md’ ‘LICENSE.md’ ‘mtdesign.bib’
+    ‘cran-comments.md’ ‘LICENSE.md’ ‘mtdesign.bib’
     ‘README.Rmd’
 
 0 errors ✔ | 0 warnings ✔ | 1 note ✖

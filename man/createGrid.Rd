@@ -27,7 +27,7 @@ createGrid(
 \item{power}{an alternative to \code{beta}}
 
 \item{nMin}{the lower bound for the search grid.  If \code{NA},
-\code{searchBounds} is called to privide an appropriate value}
+\code{searchBounds} is called to provide an appropriate value}
 
 \item{nMax}{the lower bound for the search grid.  If \code{NA},
 \code{searchBounds} is called to provide an appropriate value}

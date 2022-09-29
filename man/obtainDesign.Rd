@@ -24,7 +24,7 @@ ignored}
 
 \item{p0}{the response rate under the null hypothesis}
 
-\item{p1}{the response rate under the alternte hypothesis}
+\item{p1}{the response rate under the alternate hypothesis}
 
 \item{alpha}{the desired (one-sided) type 1 error rate}
 
