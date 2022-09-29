@@ -43,11 +43,11 @@ library(mtdesign)
 library(knitr)
 library(dplyr)
 
-simonDesign <- obtainDesign(p0=0.05, p1=0.25, alpha=0.05, beta=0.2, mander=FALSE, parallel=FALSE)
+simonDesign <- obtainDesign(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE, parallel = FALSE)
 
-simonDesign %>% 
-  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-  kable(digits=c(0, 0, 0, 0, 3, 3, 2, 1, NA))
+simonDesign %>%
+  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+  kable(digits = c(0, 0, 0, 0, 3, 3, 2, 1, NA))
 ```
 
 The table shows that the optimal design for these requirements is 0/9 2/17.  The expected sample size is 12.0 and the probability of early termination is 63%. The significance level actually achieved is 4.7% and the power level achieved is 100% - 18.8% = 81.2%.
@@ -61,11 +61,11 @@ powerPlot(simonDesign)
 Obtaining the equivalent Mander & Thompson designs requires only a small change to the calls.
 
 ```{r}
-manderDesign <- obtainDesign(p0=0.05, p1=0.25, alpha=0.05, beta=0.2)
+manderDesign <- obtainDesign(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2)
 
-manderDesign %>% 
-  select(-Alpha, -Beta, -p0, -p1) %>% 
-  kable(digits=c(0, 0, 0, 0, 3, 3, 2, 2, 2, 1, NA))
+manderDesign %>%
+  select(-Alpha, -Beta, -p0, -p1) %>%
+  kable(digits = c(0, 0, 0, 0, 3, 3, 2, 2, 2, 1, NA))
 
 powerPlot(manderDesign)
 ```
@@ -75,16 +75,17 @@ powerPlot(manderDesign)
 Suppose a trial, for whatever reason, is restricted to using 8 participants in each stage.  As shown above, the optimal Simon's two stage design is 0/9 2/17.  That's close to n~1~ = 8, n = 16.  Is there a (slightly) sub-optimal design that has n~1~ = 8, n = 16?
 
 ```{r}
-x <- createGrid(p0=0.05, p1=0.25, alpha=0.05, beta=0.2, mander=FALSE)
+x <- createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE)
 
 y <- x %>% filter(nStage1 == 8, nTotal == 16)
 z <- y %>% obtainDesign()
 if (nrow(z) == 0) {
   print("No acceptable designs were found.")
-} else {  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-  z %>% 
-    select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-    kable(digits=c(0, 0, 0, 0, 3, 3, 2, 1, NA))
+} else {
+  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+    z() %>%
+    select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+    kable(digits = c(0, 0, 0, 0, 3, 3, 2, 1, NA))
 }
 ```
 
@@ -94,21 +95,25 @@ No, there isn't.  How close can we get?
 z1 <- y %>% augmentGrid()
 
 bestSize <- z1 %>%
-              filter(Type1 < Alpha) %>%
-              slice(which.min(Beta)) 
+  filter(Type1 < Alpha) %>%
+  slice(which.min(Beta))
 bestSize %>%
-  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-  kable(caption="Best sub-optimal design with required significance level",
-        digits=c(0, 0, 0, 0, 3, 3, 2, 1, NA))
+  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+  kable(
+    caption = "Best sub-optimal design with required significance level",
+    digits = c(0, 0, 0, 0, 3, 3, 2, 1, NA)
+  )
 
 bestPower <- z1 %>%
-               filter(Type2 < Beta) %>%
-               slice(which.min(Alpha))
+  filter(Type2 < Beta) %>%
+  slice(which.min(Alpha))
 
 bestPower %>%
-  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-  kable(caption="Best sub-optimal design with required power",
-        digits=c(0, 0, 0, 0, 3, 3, 2, 1, NA))
+  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+  kable(
+    caption = "Best sub-optimal design with required power",
+    digits = c(0, 0, 0, 0, 3, 3, 2, 1, NA)
+  )
 ```
 
 So the choice lies between a design which achieves the required significance level but has a power of only 77.1% or one which has the required power but which has a significance level of 15.1%.  Both designs accept the null hypothesis when no responders are seen in the first group of eight participants.  They differ in the critical value at the end of stage 2: 1 to maintain the power, 2 to maintain the significance level.
@@ -116,9 +121,9 @@ So the choice lies between a design which achieves the required significance lev
 The power curve for each of these designs can be compared with that for the globally optimal design.
 
 ```{r}
-plotData1 <- simonDesign %>% 
-               filter(Criterion == "optimal") %>% 
-               bind_rows(list(bestSize, bestPower))
+plotData1 <- simonDesign %>%
+  filter(Criterion == "optimal") %>%
+  bind_rows(list(bestSize, bestPower))
 powerPlot(plotData1)
 ```
 
