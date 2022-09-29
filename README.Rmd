@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 ## Introduction
-The package `mtdesign` provides implementations of both Simon [-@SIMON] and Mander & Thompson [-@MANDER]. Other implementations of Simon's methods are available - for example, the `ph2simon` function in the `clinfun` package [@CLINFUN], but these do not provide as easy access to non-optimal solutions as `mtdesign` does.  I am not aware of any other R-based implementaions of Mander & Thompson's extension to Simon.
+The package `mtdesign` provides implementations of both Simon [-@SIMON] and Mander & Thompson [-@MANDER]. Other implementations of Simon's methods are available - for example, the `ph2simon` function in the `clinfun` package [@CLINFUN], but these do not provide as easy access to non-optimal solutions as `mtdesign` does.  I am not aware of any other R-based implementaions of Mander & Thompson's extension to Simon.  xxxx
 
 ## Installation
 Once available on CRAN, you can install `mtdesign` in the usualy way:
