@@ -8,6 +8,7 @@ Description: Implements Mander & Thompson's (2010) methods for two-stage designs
     optimal under the alternative hypothesis for phase II [cancer] trials.  Also
     provides an implementation of Simon's (1989) original methodology and allows 
     exploration of the operating characteristics of sub-optimal designs.
+Language: en-GB
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
