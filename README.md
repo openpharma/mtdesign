@@ -5,8 +5,6 @@
 
 <!-- badges: start -->
 
-[![Codecov test
-coverage](https://codecov.io/gh/kirkpatj/mtdesign/branch/master/graph/badge.svg)](https://app.codecov.io/gh/kirkpatj/mtdesign?branch=master)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/mtdesign)](https://CRAN.R-project.org/package=mtdesign)
 <!-- badges: end -->
@@ -52,11 +50,11 @@ library(dplyr)
 #> 
 #>     intersect, setdiff, setequal, union
 
-simonDesign <- obtainDesign(p0=0.05, p1=0.25, alpha=0.05, beta=0.2, mander=FALSE, parallel=FALSE)
+simonDesign <- obtainDesign(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE, parallel = FALSE)
 
-simonDesign %>% 
-  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-  kable(digits=c(0, 0, 0, 0, 3, 3, 2, 1, NA))
+simonDesign %>%
+  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+  kable(digits = c(0, 0, 0, 0, 3, 3, 2, 1, NA))
 ```
 
 | nTotal | nStage1 | rTotal | rFutility | Type1 | Type2 | PETNull | AveSizeNull | Criterion |
@@ -81,11 +79,11 @@ Obtaining the equivalent Mander & Thompson designs requires only a small
 change to the calls.
 
 ``` r
-manderDesign <- obtainDesign(p0=0.05, p1=0.25, alpha=0.05, beta=0.2)
+manderDesign <- obtainDesign(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2)
 
-manderDesign %>% 
-  select(-Alpha, -Beta, -p0, -p1) %>% 
-  kable(digits=c(0, 0, 0, 0, 3, 3, 2, 2, 2, 1, NA))
+manderDesign %>%
+  select(-Alpha, -Beta, -p0, -p1) %>%
+  kable(digits = c(0, 0, 0, 0, 3, 3, 2, 2, 2, 1, NA))
 ```
 
 | nTotal | nStage1 | rTotal | rFutility | rSuccess | Type1 | Type2 | PETNull | PETAlt | AveSizeNull | AveSizeAlt | Criterion   |
@@ -110,17 +108,18 @@ there a (slightly) sub-optimal design that has n<sub>1</sub> = 8, n =
 16?
 
 ``` r
-x <- createGrid(p0=0.05, p1=0.25, alpha=0.05, beta=0.2, mander=FALSE)
+x <- createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE)
 
 y <- x %>% filter(nStage1 == 8, nTotal == 16)
 z <- y %>% obtainDesign()
 #> Warning: No acceptable designs were found.
 if (nrow(z) == 0) {
   print("No acceptable designs were found.")
-} else {  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-  z %>% 
-    select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-    kable(digits=c(0, 0, 0, 0, 3, 3, 2, 1, NA))
+} else {
+  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+    z() %>%
+    select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+    kable(digits = c(0, 0, 0, 0, 3, 3, 2, 1, NA))
 }
 #> [1] "No acceptable designs were found."
 ```
@@ -131,12 +130,14 @@ No, there isn’t. How close can we get?
 z1 <- y %>% augmentGrid()
 
 bestSize <- z1 %>%
-              filter(Type1 < Alpha) %>%
-              slice(which.min(Beta)) 
+  filter(Type1 < Alpha) %>%
+  slice(which.min(Beta))
 bestSize %>%
-  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-  kable(caption="Best sub-optimal design with required significance level",
-        digits=c(0, 0, 0, 0, 3, 3, 2, 1, NA))
+  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+  kable(
+    caption = "Best sub-optimal design with required significance level",
+    digits = c(0, 0, 0, 0, 3, 3, 2, 1, NA)
+  )
 ```
 
 | nTotal | nStage1 | rTotal | rFutility | Type1 | Type2 | PETNull | AveSizeNull |
@@ -147,13 +148,15 @@ Best sub-optimal design with required significance level
 
 ``` r
 bestPower <- z1 %>%
-               filter(Type2 < Beta) %>%
-               slice(which.min(Alpha))
+  filter(Type2 < Beta) %>%
+  slice(which.min(Alpha))
 
 bestPower %>%
-  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>% 
-  kable(caption="Best sub-optimal design with required power",
-        digits=c(0, 0, 0, 0, 3, 3, 2, 1, NA))
+  select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
+  kable(
+    caption = "Best sub-optimal design with required power",
+    digits = c(0, 0, 0, 0, 3, 3, 2, 1, NA)
+  )
 ```
 
 | nTotal | nStage1 | rTotal | rFutility | Type1 | Type2 | PETNull | AveSizeNull |
@@ -174,9 +177,9 @@ The power curve for each of these designs can be compared with that for
 the globally optimal design.
 
 ``` r
-plotData1 <- simonDesign %>% 
-               filter(Criterion == "optimal") %>% 
-               bind_rows(list(bestSize, bestPower))
+plotData1 <- simonDesign %>%
+  filter(Criterion == "optimal") %>%
+  bind_rows(list(bestSize, bestPower))
 powerPlot(plotData1)
 ```
 
