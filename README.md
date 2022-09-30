@@ -26,7 +26,7 @@ Once available on CRAN, you can install `mtdesign` in the usual way:
 `install.packages("mtdesign")`
 
 You can install the development version of `mtdesign` from
-[GitHub](https://www.github.com/openpharma/mtdesign) with:
+[GitHub](https://github.com/openpharma/mtdesign) with:
 
 `devtools::install_github("openpharma/mtdesign")`
 
