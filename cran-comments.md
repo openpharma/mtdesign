@@ -1,3 +1,12 @@
+## Resubmission
+In this resubmission I have 
+
+*  Corrected the URL that links to the original Mander & Thompson paper.  My apologies for the original error.
+
+I have *not* corrected the flagged potential misspelling of "Mander" in the README document.  As indicated above,  "Mander" is the correct spelling.  It is the surname of prof Adrian Mander, the first author of the paper whose methods the package implements.  Therefore, no correction is required.
+
+These were the only two issues raised during the automated validation of my first submission.
+
 ## R CMD check results
 
 Duration: 5m 41.1s

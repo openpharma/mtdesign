@@ -269,8 +269,7 @@ Logging Utility*. <https://daroczig.github.io/logger/>.
 Mander, AP, and Thompson, SG. 2010. “Two-Stage Designs Optimal Under the
 Alternative Hypothesis for Phase II Cancer Clinical Trials.”
 *Contemporary Clinical Trials* 31 (6): 572–78.
-[https://doi.org/10.1016/j.cct.2010.07.008:
-10.1016/j.cct.2010.07.008](https://doi.org/10.1016/j.cct.2010.07.008: 10.1016/j.cct.2010.07.008).
+https://doi.org/<https://doi.org/10.1016/j.cct.2010.07.008>.
 
 </div>
 
