@@ -1,3 +1,5 @@
-22# mtdesign 0.1.0
+# mtdesign 
 
-* Added a `NEWS.md` file to track changes to the package.
+## Version 0.1.0
+
+This is the first release of the package.

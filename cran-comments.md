@@ -1,7 +1,8 @@
 ## Resubmission
 In this resubmission I have 
 
-*  Corrected the URL that links to the original Mander & Thompson paper.  My apologies for the original error.
+* Corrected the URL that links to the original Mander & Thompson paper.  My apologies for the original error.
+* Added a "first release" section to NEWS.md"
 
 I have *not* corrected the flagged potential misspelling of "Mander" in the README document.  As indicated above,  "Mander" is the correct spelling.  It is the surname of prof Adrian Mander, the first author of the paper whose methods the package implements.  Therefore, no correction is required.
 
