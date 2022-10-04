@@ -6,6 +6,8 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/mtdesign)](https://CRAN.R-project.org/package=mtdesign)
+[![Test
+Coverage](https://raw.githubusercontent.com/openpharma/mtdesign/_xml_coverage_reports/data/main/badge.svg)](https://github.com/openpharma/mtdesign/blob/_xml_coverage_reports/data/main/coverage.xml)
 
 <!-- badges: end -->
 
