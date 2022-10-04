@@ -2,14 +2,13 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 simonProb <- function(p, n1, r1, n, r) {
-    .Call('_mtdesign_simonProb', PACKAGE = 'mtdesign', p, n1, r1, n, r)
+  .Call("_mtdesign_simonProb", PACKAGE = "mtdesign", p, n1, r1, n, r)
 }
 
 manderProb <- function(p, n1, r1, r2, n, r) {
-    .Call('_mtdesign_manderProb', PACKAGE = 'mtdesign', p, n1, r1, r2, n, r)
+  .Call("_mtdesign_manderProb", PACKAGE = "mtdesign", p, n1, r1, r2, n, r)
 }
 
 augmentGridC <- function(d) {
-    .Call('_mtdesign_augmentGridC', PACKAGE = 'mtdesign', d)
+  .Call("_mtdesign_augmentGridC", PACKAGE = "mtdesign", d)
 }
-

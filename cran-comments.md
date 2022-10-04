@@ -1,4 +1,4 @@
-## Second resubmission
+# Second resubmission
 
 I have
 
