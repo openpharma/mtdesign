@@ -169,9 +169,11 @@ The `parallel` package is required for parallelisation.  If parallelisation is b
 
 ## Troubleshooting
 If, when installing or using the `mtdesign` package, you get an error regarding a syntax error in an`.hpp` file, similar to the following
-```
+
+```R
 .../BH/include/boost/math/tools/fraction.hpp:84:48: error: ‘long double’ is not a class, struct, or union type using value_type = typename T::value_type;
 ```
+
 the issue is most likely a mismatch between the g++ compiler being used and the headers supplied by the `BH` package.  There are only two solutions that I know of:
 
 *  Upgrade g++

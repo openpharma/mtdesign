@@ -41,8 +41,8 @@ a tibble.  See Usage notes for a list and description of columns.
 Create a grid of candidate designs
 }
 \examples{
-#Standard use for a Simon's 2-stage design
-x <- createGrid(p0=0.1, p1=0.5, alpha=0.1, beta=0.1, mander=FALSE)
-#Custom search bounds for a Mander & Thompson design
-y <- createGrid(p0=0.1, p1=0.4, alpha=0.1, beta=0.1, nMin=20, nMax=30)
+# Standard use for a Simon's 2-stage design
+x <- createGrid(p0 = 0.1, p1 = 0.5, alpha = 0.1, beta = 0.1, mander = FALSE)
+# Custom search bounds for a Mander & Thompson design
+y <- createGrid(p0 = 0.1, p1 = 0.4, alpha = 0.1, beta = 0.1, nMin = 20, nMax = 30)
 }

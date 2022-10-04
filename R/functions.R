@@ -3,18 +3,20 @@
 
 .onLoad <- function(libname, pkgname) {
   logger::log_layout(
-    logger::layout_glue_generator(format = '{namespace} {time} {level} {fn}: {msg}'),
-    namespace="mtdesign"
+    logger::layout_glue_generator(format = "{namespace} {time} {level} {fn}: {msg}"),
+    namespace = "mtdesign"
   )
 }
 
-.onUnload <- function (libpath) {
+.onUnload <- function(libpath) {
   library.dynam.unload("mtdesign", libpath)
 }
 
 isBasicGrid <- function(grid) {
   logger::log_debug("Entry")
-  if (!methods::is(grid, "data.frame")) return (FALSE)
+  if (!methods::is(grid, "data.frame")) {
+    return(FALSE)
+  }
   columnsRequired <- c("p0", "p1", "nStage1", "nTotal", "rFutility", "rTotal")
   rv <- length(intersect(names(grid), columnsRequired)) == length(columnsRequired)
   logger::log_debug("Exit")
@@ -31,15 +33,19 @@ isManderGrid <- function(grid) {
 
 isAugmented <- function(grid) {
   logger::log_debug("Entry")
-  if (!isBasicGrid(grid)) return (NA)
-  columnsRequired <- c("Type1", "Type2", "PETNull", "PETAlt", "AveSizeNull",
-                       "AveSizeAlt")
+  if (!isBasicGrid(grid)) {
+    return(NA)
+  }
+  columnsRequired <- c(
+    "Type1", "Type2", "PETNull", "PETAlt", "AveSizeNull",
+    "AveSizeAlt"
+  )
   logger::log_debug("Exit")
   rv <- length(intersect(names(grid), columnsRequired)) == length(columnsRequired)
   return(rv)
 }
 
-#'Create a grid of candidate designs
+#' Create a grid of candidate designs
 #'
 #' @param p0 the response rate under the null hypothesis
 #' @param p1 the response rate under the alternate hypothesis
@@ -53,56 +59,56 @@ isAugmented <- function(grid) {
 #' @param mander is a Mander & Thompson or a Simon's design required?
 #' @return a tibble.  See Usage notes for a list and description of columns.
 #' @examples
-#' #Standard use for a Simon's 2-stage design
-#' x <- createGrid(p0=0.1, p1=0.5, alpha=0.1, beta=0.1, mander=FALSE)
-#' #Custom search bounds for a Mander & Thompson design
-#' y <- createGrid(p0=0.1, p1=0.4, alpha=0.1, beta=0.1, nMin=20, nMax=30)
+#' # Standard use for a Simon's 2-stage design
+#' x <- createGrid(p0 = 0.1, p1 = 0.5, alpha = 0.1, beta = 0.1, mander = FALSE)
+#' # Custom search bounds for a Mander & Thompson design
+#' y <- createGrid(p0 = 0.1, p1 = 0.4, alpha = 0.1, beta = 0.1, nMin = 20, nMax = 30)
 #' @importFrom magrittr %>%
 #' @importFrom tibble tibble
 #' @export
 createGrid <- function(p0,
                        p1,
-                       alpha=0.1,
-                       beta=NA,
-                       power=ifelse(is.na(beta), 0.9, 1 - beta),
-                       nMin=NA,
-                       nMax=NA,
-                       mander=TRUE
-                       )
-{
+                       alpha = 0.1,
+                       beta = NA,
+                       power = ifelse(is.na(beta), 0.9, 1 - beta),
+                       nMin = NA,
+                       nMax = NA,
+                       mander = TRUE) {
   logger::log_debug("Entry")
-  #Validation
+  # Validation
   if (is.na(p0)) stop("You must provide a value for p0")
   if (is.na(p0)) stop("You must provide a value for p1")
   if (p0 < 0 || p0 > 1) stop("p0 must be between 0 and 1")
   if (p1 < 0 || p1 > 1) stop("p1 must be between 0 and 1")
   if (p1 <= p0) stop("p1 must be strictly greater than p0")
   if (alpha < 0 || alpha > 1) stop("alpha must be between 0 and 1")
-  if (!is.na(power)) if (power < 0 || power > 1) {
-    stop("power must be between 0 and 1")
+  if (!is.na(power)) {
+    if (power < 0 || power > 1) {
+      stop("power must be between 0 and 1")
+    }
   }
-  if (!is.na(beta)) if (beta < 0 || beta > 1) {
-    stop("beta must be between 0 and 1")
+  if (!is.na(beta)) {
+    if (beta < 0 || beta > 1) {
+      stop("beta must be between 0 and 1")
+    }
   }
-  if (!is.na(power) & !is.na(beta) & !isTRUE(all.equal(beta, (1-power)))) {
+  if (!is.na(power) & !is.na(beta) & !isTRUE(all.equal(beta, (1 - power)))) {
     stop("Inconsistent values for beta and power")
   }
   if (is.na(power) & is.na(beta)) {
     stop("Both beta and power are null.  At least one must be not null.")
   }
 
-  #Initialise
+  # Initialise
   if (is.na(beta)) beta <- 1 - power
   if (is.na(nMin) | is.na(nMax)) {
-    bounds <- searchBounds(p0, p1, alpha, beta, twoSided=FALSE)
+    bounds <- searchBounds(p0, p1, alpha, beta, twoSided = FALSE)
   }
-  if (is.na(nMin))
-  {
+  if (is.na(nMin)) {
     nMin <- bounds["min"]
     logger::log_debug(paste0("Using default value for nMin: ", nMin))
   }
-  if (is.na(nMax))
-  {
+  if (is.na(nMax)) {
     nMax <- bounds["max"]
     logger::log_debug(paste0("Using default value for nMax: ", nMax))
   }
@@ -119,11 +125,11 @@ createGrid <- function(p0,
   )
   if (nMax <= nMin) stop("nMax must be strictly greater than nMin.")
 
-  #Begin
+  # Begin
   nTotal <- nMin:nMax
-  nStage1 <- 1:(nMax-1)
-  rTotal <- 0:(nMax-1)
-  rFutility <- 0:(nMax-1)
+  nStage1 <- 1:(nMax - 1)
+  rTotal <- 0:(nMax - 1)
+  rFutility <- 0:(nMax - 1)
   if (mander) {
     rSuccess <- 0:nMax
   } else {
@@ -135,11 +141,11 @@ createGrid <- function(p0,
   #        dplyr::expand(nTotal, nStage1, rTotal, rFutility, rSuccess)
   # so build up and filter in stages.
   d <- tibble::tibble() %>% tidyr::expand(nTotal, nStage1)
-  d <- d %>% dplyr::filter(nTotal >= nMin,  nStage1 < nTotal)
+  d <- d %>% dplyr::filter(nTotal >= nMin, nStage1 < nTotal)
   logger::log_trace(paste0("Building grid - nTotal, nStage1: ", nrow(d)))
 
   d <- d %>% tidyr::expand(tidyr::nesting(nTotal, nStage1), rTotal)
-  d <- d %>%  dplyr::filter(rTotal < nTotal)
+  d <- d %>% dplyr::filter(rTotal < nTotal)
   logger::log_trace(paste0("Building grid - nTotal, nStage1, rTotal: ", nrow(d)))
 
   d <- d %>% tidyr::expand(tidyr::nesting(nTotal, nStage1, rTotal), rFutility)
@@ -175,17 +181,17 @@ createGrid <- function(p0,
   }
   d <- d %>%
     dplyr::mutate(
-      p0=p0,
-      p1=p1,
-      Alpha=alpha,
-      Beta=beta
+      p0 = p0,
+      p1 = p1,
+      Alpha = alpha,
+      Beta = beta
     )
   if (!mander) {
     d <- d %>% dplyr::select(-rSuccess)
   }
   logger::log_trace(paste0("Grid has ", nrow(d), " rows."))
   logger::log_debug("Exit")
-  return (d)
+  return(d)
 }
 
 #' Obtain default bounds for the construction of the search grid.
@@ -201,20 +207,20 @@ createGrid <- function(p0,
 #' Fleiss et al; "min" - the lower bound, 0.8*n; "max" - the upper bound, 2*n.
 #' \code{floor()} and \code{ceiling()} are applied as appropriate.
 #' @export
-searchBounds <- function(p0, p1, alpha=0.05, beta=0.2, twoSided=TRUE) {
+searchBounds <- function(p0, p1, alpha = 0.05, beta = 0.2, twoSided = TRUE) {
   logger::log_debug("Entry")
   if (twoSided) alpha <- alpha / 2
 
   # Sample size formula based on Fleiss JL, Levin B and Paik MC (2003).
   # Statistical Methods for Rates and Proportions, Third Edition,
   # John Wiley & Sons, New York
-  n <- ((stats::qnorm(1 - alpha)*sqrt(p0*(1-p0)) +
-           stats::qnorm(1 - beta)*sqrt(p1*(1-p1))) /
-          (p0 - p1)) ^ 2
+  n <- ((stats::qnorm(1 - alpha) * sqrt(p0 * (1 - p0)) +
+    stats::qnorm(1 - beta) * sqrt(p1 * (1 - p1))) /
+    (p0 - p1))^2
   # Continuity correction from Fleiss et al
-  n <- n + 1/abs(p0-p1)
-  #Bounds based on ????
-  rv <- c("n"=ceiling(n), "min"=floor(n*0.8), "max"=ceiling(n*2))
+  n <- n + 1 / abs(p0 - p1)
+  # Bounds based on ????
+  rv <- c("n" = ceiling(n), "min" = floor(n * 0.8), "max" = ceiling(n * 2))
   logger::log_debug("Exit")
   return(rv)
 }
@@ -234,10 +240,10 @@ searchBounds <- function(p0, p1, alpha=0.05, beta=0.2, twoSided=TRUE) {
 #' paralellisation is requested and needed, an exception is thrown if the
 #' parallel package is not available.
 #' @examples
-#' x <- createGrid(p0=0.1, p1=0.30, alpha=0.1, beta=0.1, nMin=24, nMax=32) %>%
-#'        augmentGrid(parallel=FALSE)
+#' x <- createGrid(p0 = 0.1, p1 = 0.30, alpha = 0.1, beta = 0.1, nMin = 24, nMax = 32) %>%
+#'   augmentGrid(parallel = FALSE)
 #' @export
-augmentGrid <- function(d, parallel=TRUE, cores=NA, minChunkSize=100000) {
+augmentGrid <- function(d, parallel = TRUE, cores = NA, minChunkSize = 100000) {
   logger::log_debug("Entry")
   k <- d %>% nrow()
   if (parallel) {
@@ -248,7 +254,7 @@ augmentGrid <- function(d, parallel=TRUE, cores=NA, minChunkSize=100000) {
           "] is less than the minimum chunk size [", minChunkSize,
           "].  Parallelisation will not occur"
         ),
-        namespace="mtdesign"
+        namespace = "mtdesign"
       )
       parallel <- FALSE
     }
@@ -263,24 +269,26 @@ augmentGrid <- function(d, parallel=TRUE, cores=NA, minChunkSize=100000) {
     logger::log_trace("Starting parallelisation")
     logger::log_trace(paste0("Requesting ", cores, " cores"))
     logger::log_trace(paste0("k is ", k))
-    chunkSize <- ceiling(k/cores)
+    chunkSize <- ceiling(k / cores)
     logger::log_trace(paste0("Creating chunk list.  Chunk size is ", chunkSize))
-    tmp <- d %>% dplyr::mutate(Chunk=ceiling(dplyr::row_number()/chunkSize))
+    tmp <- d %>% dplyr::mutate(Chunk = ceiling(dplyr::row_number() / chunkSize))
     parallelList <- tmp %>%
       dplyr::group_by(Chunk) %>%
       dplyr::group_map(function(.x, .y) .x)
     logger::log_trace("Creating cluster")
     cluster <- parallel::makeCluster(cores)
     logger::log_trace("Initialising nodes")
-    parallel::clusterEvalQ(cluster, { library(parallel) })
+    parallel::clusterEvalQ(cluster, {
+      library(parallel)
+    })
     logger::log_trace("Running parLapply")
     d <- parallel::parLapply(
       cluster,
       parallelList,
       augmentGrid,
-      parallel=FALSE
+      parallel = FALSE
     ) %>%
-    dplyr::bind_rows()
+      dplyr::bind_rows()
     logger::log_trace("Stopping cluster")
     suppressWarnings(parallel::stopCluster(cluster))
   } else {
@@ -293,18 +301,18 @@ augmentGrid <- function(d, parallel=TRUE, cores=NA, minChunkSize=100000) {
         )
       )
     }
-    #The return type of a data frame from Rcpp is unreliable, so wrap it here
-    #to make sure all is good
+    # The return type of a data frame from Rcpp is unreliable, so wrap it here
+    # to make sure all is good
     cls <- class(d)
     d <- tibble::as_tibble(augmentGridC(d))
     class(d) <- cls
   }
   # Bug fix
   if (isManderGrid(d)) {
-    d <- d %>% dplyr::mutate(rSuccess=as.integer(rSuccess))
+    d <- d %>% dplyr::mutate(rSuccess = as.integer(rSuccess))
   }
   logger::log_debug("Exit")
-  return (d)
+  return(d)
 }
 
 
@@ -349,38 +357,38 @@ augmentGrid <- function(d, parallel=TRUE, cores=NA, minChunkSize=100000) {
 #'  under constraints - for example with fixed stage sizes.
 #' @examples
 #' \donttest{
-#' #Standard use (Simon's 2-stage design)
-#' createGrid(p0=0.05, p1=0.25, alpha=0.05, beta=0.2, mander=FALSE) %>%
-#'   augmentGrid(parallel=FALSE) %>%
+#' # Standard use (Simon's 2-stage design)
+#' createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE) %>%
+#'   augmentGrid(parallel = FALSE) %>%
 #'   obtainDesign()
-#' #Constrained stage sizes
-#'createGrid(p0=0.25, p1=0.45, alpha=0.05, beta=0.2) %>%
-#'  dplyr::filter(nStage1 == 8) %>%
-#'  augmentGrid(parallel=FALSE) %>%
-#'  obtainDesign()
+#' # Constrained stage sizes
+#' createGrid(p0 = 0.25, p1 = 0.45, alpha = 0.05, beta = 0.2) %>%
+#'   dplyr::filter(nStage1 == 8) %>%
+#'   augmentGrid(parallel = FALSE) %>%
+#'   obtainDesign()
 #' }
 #' @export
-obtainDesign <- function(grid=NULL,
-                         p0=NA,
-                         p1=NA,
-                         alpha=ifelse(is.null(grid), 0.05, NA),
-                         beta=ifelse(is.null(grid), 0.1, NA),
-                         fullGrid=FALSE,
+obtainDesign <- function(grid = NULL,
+                         p0 = NA,
+                         p1 = NA,
+                         alpha = ifelse(is.null(grid), 0.05, NA),
+                         beta = ifelse(is.null(grid), 0.1, NA),
+                         fullGrid = FALSE,
                          ...) {
   logger::log_debug("Entry")
-  #Initialise
+  # Initialise
   dots <- list(...)
-  #Validate
+  # Validate
   if (is.null(grid)) {
-    if (is.na(p0) | is.na(p1) |  is.na(alpha) | is.na(beta)) {
+    if (is.na(p0) | is.na(p1) | is.na(alpha) | is.na(beta)) {
       stop("If you do not supply a grid, then you must supply all of p0, p1, alpha and beta.")
     }
-    if (p0 <= 0 | p0 >= 1) stop ("p0 must be between 0 and 1")
-    if (p1 <= 0 | p1 >= 1) stop ("p1 must be between 0 and 1")
-    if (alpha <= 0 | alpha >= 1) stop ("alpha must be between 0 and 1")
-    if (beta <= 0 | beta >= 1) stop ("beta must be between 0 and 1")
+    if (p0 <= 0 | p0 >= 1) stop("p0 must be between 0 and 1")
+    if (p1 <= 0 | p1 >= 1) stop("p1 must be between 0 and 1")
+    if (alpha <= 0 | alpha >= 1) stop("alpha must be between 0 and 1")
+    if (beta <= 0 | beta >= 1) stop("beta must be between 0 and 1")
   } else {
-    if(!(grid %>% isBasicGrid())) {
+    if (!(grid %>% isBasicGrid())) {
       stop("Grid must be a tibble created by createGrid()")
     }
     if (!is.na(p0)) {
@@ -397,26 +405,28 @@ obtainDesign <- function(grid=NULL,
     }
   }
 
-  #Begin
+  # Begin
   # Calls to do.call are required to separate the dot list appropriately
   # Function name as string as workaround for https://github.com/daroczig/logger/issues/114
-  if (is.null(grid)) grid <-
-    do.call(
-      "createGrid",
-      c(
-        list(p0=p0, p1=p1, alpha=alpha, beta=beta),
-        dots[names(dots) %in% names(formals(mtdesign::createGrid))]
+  if (is.null(grid)) {
+    grid <-
+      do.call(
+        "createGrid",
+        c(
+          list(p0 = p0, p1 = p1, alpha = alpha, beta = beta),
+          dots[names(dots) %in% names(formals(mtdesign::createGrid))]
+        )
       )
-    )
+  }
   if (!(grid %>% isAugmented())) {
     grid <-
-    do.call(
-      "augmentGrid",
-      c(
-        list(d=grid),
-        dots[names(dots) %in% names(formals(mtdesign::augmentGrid))]
+      do.call(
+        "augmentGrid",
+        c(
+          list(d = grid),
+          dots[names(dots) %in% names(formals(mtdesign::augmentGrid))]
+        )
       )
-    )
   }
   if (fullGrid) {
     return(grid)
@@ -435,7 +445,7 @@ obtainDesign <- function(grid=NULL,
     rv[[1]] <- acceptableGrid %>%
       dplyr::slice(which.min(AveSizeNull)) %>%
       dplyr::mutate(
-        Criterion=ifelse(
+        Criterion = ifelse(
           acceptableGrid %>% isManderGrid(),
           "optimalNull",
           "optimal"
@@ -445,7 +455,7 @@ obtainDesign <- function(grid=NULL,
       dplyr::slice_min(nTotal) %>%
       dplyr::slice_min(AveSizeNull) %>%
       dplyr::mutate(
-        Criterion=ifelse(
+        Criterion = ifelse(
           acceptableGrid %>% isManderGrid(),
           "minimaxNull",
           "minimax"
@@ -454,16 +464,16 @@ obtainDesign <- function(grid=NULL,
     if (isManderGrid(grid)) {
       rv[[3]] <- acceptableGrid %>%
         dplyr::slice_min(AveSizeAlt) %>%
-        dplyr::mutate(Criterion="optimalAlt")
+        dplyr::mutate(Criterion = "optimalAlt")
       rv[[4]] <- acceptableGrid %>%
         dplyr::slice_min(nTotal) %>%
         dplyr::slice_min(AveSizeAlt) %>%
-        dplyr::mutate(Criterion="minimaxAlt")
+        dplyr::mutate(Criterion = "minimaxAlt")
     }
     rv <- dplyr::bind_rows(rv)
     class(rv) <- class(grid)
     logger::log_debug("Exit")
-    return (rv)
+    return(rv)
   }
 }
 
@@ -475,22 +485,22 @@ obtainDesign <- function(grid=NULL,
 #' be plotted
 #' @return the ggplot object containing the power curve(s)
 #' @examples
-#' createGrid(p0=0.05, p1=0.25, alpha=0.05, beta=0.2, mander=FALSE) %>%
-#'   augmentGrid(cores=2) %>%
+#' createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE) %>%
+#'   augmentGrid(cores = 2) %>%
 #'   obtainDesign() %>%
-#'   powerPlot(probs=seq(0, 0.5, 0.025))
+#'   powerPlot(probs = seq(0, 0.5, 0.025))
 #' @export
-powerPlot <- function(grid, probs=seq(0, 1, 0.01)) {
+powerPlot <- function(grid, probs = seq(0, 1, 0.01)) {
   logger::log_debug("Entry")
   if (is.null(grid)) stop("grid cannot be null")
   if (!isBasicGrid(grid)) stop("Grid must be a tibble created by createGrid()")
 
   if (isManderGrid(grid)) {
     plotData <- grid %>%
-      dplyr::mutate(Design=c(1:nrow(grid))) %>%
+      dplyr::mutate(Design = c(1:nrow(grid))) %>%
       dplyr::group_by(Design) %>%
       dplyr::mutate(
-        Label=paste0(
+        Label = paste0(
           "(",
           rFutility,
           " ",
@@ -530,19 +540,19 @@ powerPlot <- function(grid, probs=seq(0, 1, 0.01)) {
           p0,
           p1
         ),
-        pResponse=probs
+        pResponse = probs
       ) %>%
       dplyr::group_by(Design, pResponse) %>%
       dplyr::mutate(
-        pReject=1 - manderProb(pResponse, nStage1, rFutility, rSuccess, nTotal, rTotal)
+        pReject = 1 - manderProb(pResponse, nStage1, rFutility, rSuccess, nTotal, rTotal)
       ) %>%
       dplyr::ungroup()
   } else {
     plotData <- grid %>%
-      dplyr::mutate(Design=1:nrow(grid)) %>%
+      dplyr::mutate(Design = 1:nrow(grid)) %>%
       dplyr::group_by(Design) %>%
       dplyr::mutate(
-        Label=paste0(
+        Label = paste0(
           rFutility,
           "/",
           nStage1,
@@ -550,7 +560,7 @@ powerPlot <- function(grid, probs=seq(0, 1, 0.01)) {
           rTotal,
           "/",
           nTotal
-          )
+        )
       ) %>%
       dplyr::select(
         Design,
@@ -577,28 +587,29 @@ powerPlot <- function(grid, probs=seq(0, 1, 0.01)) {
           p0,
           p1
         ),
-        pResponse=probs
+        pResponse = probs
       ) %>%
       dplyr::group_by(Design, pResponse) %>%
       dplyr::mutate(
-        pReject=1 - simonProb(pResponse, nStage1, rFutility, nTotal, rTotal)
+        pReject = 1 - simonProb(pResponse, nStage1, rFutility, nTotal, rTotal)
       ) %>%
       dplyr::ungroup()
   }
   plot <- plotData %>%
-            ggplot2::ggplot() +
-            ggplot2::geom_line(
-              ggplot2::aes(
-                x=pResponse,
-                y=pReject,
-                colour=Label)
-            ) +
-            ggplot2::labs(
-              x="True response rate",
-              y="p(Signal detected)"
-            ) +
-            ggplot2::theme_light() +
-            ggplot2::theme(legend.title=ggplot2::element_blank())
+    ggplot2::ggplot() +
+    ggplot2::geom_line(
+      ggplot2::aes(
+        x = pResponse,
+        y = pReject,
+        colour = Label
+      )
+    ) +
+    ggplot2::labs(
+      x = "True response rate",
+      y = "p(Signal detected)"
+    ) +
+    ggplot2::theme_light() +
+    ggplot2::theme(legend.title = ggplot2::element_blank())
   logger::log_debug("Exit")
   return(plot)
 }

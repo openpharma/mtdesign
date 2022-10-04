@@ -207,14 +207,14 @@ powerPlot(plotData1)
 
 The `mtdesign` package consists of three main functions:
 
--   `createGrid` creates the grid (of nStage1, rFutility, nTotal and
+- `createGrid` creates the grid (of nStage1, rFutility, nTotal and
     rTotal for Simon’s design or nStage1, rFutility, rSuccess, nTotal
     and rTotal for a Mander & Thompson design) over which the brute
     force search for the required design(s) is conducted
--   `augmentGrid`takes a grid created by `createGrid` and adds columns
+- `augmentGrid`takes a grid created by `createGrid` and adds columns
     for probability of early termination, Type 1 error, Type 2 error and
     expected sample size to it.
--   `obtainDesign` takes an augmented grid and identifies the optimal
+- `obtainDesign` takes an augmented grid and identifies the optimal
     and minimax designs
 
 ## Error and warning messages and logging
@@ -240,12 +240,12 @@ attempt to speed up the evaluation of candidate designs.
 The `augmentGrid` function allows users some control over the
 parallelisation process:
 
--   The `parallel` parameter defaults to `TRUE` and defines whether or
+- The `parallel` parameter defaults to `TRUE` and defines whether or
     not paralellisation is to be used.
--   The `cores` parameter specifies how many cores are to be used. The
+- The `cores` parameter specifies how many cores are to be used. The
     default value, `NA` tells `mtdesign` to use all available (as
     defined by `parallel::detectCores()`), cores.
--   The `minChunkSize` determines the smallest grid of candidate designs
+- The `minChunkSize` determines the smallest grid of candidate designs
     that will trigger paralellisation. The default value is `100000`.
 
 The `parallel` package is required for parallelisation. If
@@ -266,8 +266,8 @@ the issue is most likely a mismatch between the g++ compiler being used
 and the headers supplied by the `BH` package. There are only two
 solutions that I know of:
 
--   Upgrade g++
--   Downgrade the version of the `BH` package you are using. The
+- Upgrade g++
+- Downgrade the version of the `BH` package you are using. The
     appropriate package version depends on the version of the g++
     compiler you are using.
 
@@ -287,7 +287,7 @@ Logging Utility*. <https://daroczig.github.io/logger/>.
 Mander, AP, and Thompson, SG. 2010. “Two-Stage Designs Optimal Under the
 Alternative Hypothesis for Phase II Cancer Clinical Trials.”
 *Contemporary Clinical Trials* 31 (6): 572–78.
-https://doi.org/<https://doi.org/10.1016/j.cct.2010.07.008>.
+<https://doi.org/><https://doi.org/10.1016/j.cct.2010.07.008>.
 
 </div>
 
@@ -302,7 +302,7 @@ Functions.” Software. <https://CRAN.R-project.org/package=clinfun>.
 
 Simon, R. 1989. “Optimal Two-Stage Designs for Phase II Clinical
 Trials.” *Controlled Clinical Trials* 10 (1): 1–10.
-https://doi.org/<https://doi.org/10.1016/0197-2456(89)90015-9>.
+<https://doi.org/><https://doi.org/10.1016/0197-2456(89)90015-9>.
 
 </div>
 

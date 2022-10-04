@@ -1,6 +1,6 @@
 test_that("augmentGrid works", {
-  x <- createGrid(p0=0.1, p1=0.5, alpha=0.05, beta=0.2)
-  y <- x %>% augmentGrid(parallel=FALSE)
+  x <- createGrid(p0 = 0.1, p1 = 0.5, alpha = 0.05, beta = 0.2)
+  y <- x %>% augmentGrid(parallel = FALSE)
 
   # Return value
   expect_true(isAugmented(y))

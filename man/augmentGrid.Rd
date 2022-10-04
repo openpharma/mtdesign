@@ -34,6 +34,6 @@ parallel package is not available.
 }
 
 \examples{
-x <- createGrid(p0=0.1, p1=0.30, alpha=0.1, beta=0.1, nMin=24, nMax=32) \%>\%
-       augmentGrid(parallel=FALSE)
+x <- createGrid(p0 = 0.1, p1 = 0.30, alpha = 0.1, beta = 0.1, nMin = 24, nMax = 32) \%>\%
+  augmentGrid(parallel = FALSE)
 }
