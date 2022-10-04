@@ -73,12 +73,12 @@ Obtaining the equivalent Mander & Thompson designs requires only a small change 
 
 ```{r}
 manderDesign <- obtainDesign(
-                  p0 = 0.05, 
-                  p1 = 0.25, 
-                  alpha = 0.05, 
-                  beta = 0.2, 
-                  cores = maxCores
-                )
+  p0 = 0.05,
+  p1 = 0.25,
+  alpha = 0.05,
+  beta = 0.2,
+  cores = maxCores
+)
 
 manderDesign %>%
   select(-Alpha, -Beta, -p0, -p1) %>%
