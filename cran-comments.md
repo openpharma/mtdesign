@@ -1,3 +1,12 @@
+## Second resubmission
+I have
+
+*  replaced the original `Author:` field in DESCRIPTION with `Authors@R: person(...)`
+*  deleted the `Maintainer:` field in DESCRIPTION as it is now covered by roles="cre" `Authors@R:`
+*  added `doi` links to the references in DESCRIPTION
+*  added a check to README.Rmd to limit the number of cores used to two if `!identical(Sys.getenv("NOT_CRAN"), "true")`
+*  checked example code to ensure that all calls to `augmentGrid` have either `parallel=FALSE` or `cores=2`.  Similarly, calls to `obtainDesign` are either in a pipe containing a call to `augmentGrid` with such parameters or have `parallel=FALSE` themselves.
+
 ## Resubmission
 In this resubmission I have 
 

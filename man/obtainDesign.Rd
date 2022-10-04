@@ -75,5 +75,6 @@ createGrid(p0=0.05, p1=0.25, alpha=0.05, beta=0.2, mander=FALSE) \%>\%
 createGrid(p0=0.25, p1=0.45, alpha=0.05, beta=0.2) \%>\%
  dplyr::filter(nStage1 == 8) \%>\%
  augmentGrid(parallel=FALSE) \%>\%
- obtainDesign()#' }
+ obtainDesign()
+}
 }

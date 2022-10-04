@@ -357,7 +357,8 @@ augmentGrid <- function(d, parallel=TRUE, cores=NA, minChunkSize=100000) {
 #'createGrid(p0=0.25, p1=0.45, alpha=0.05, beta=0.2) %>%
 #'  dplyr::filter(nStage1 == 8) %>%
 #'  augmentGrid(parallel=FALSE) %>%
-#'  obtainDesign()#' }
+#'  obtainDesign()
+#' }
 #' @export
 obtainDesign <- function(grid=NULL,
                          p0=NA,

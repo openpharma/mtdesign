@@ -30,6 +30,18 @@ You can install the development version of `mtdesign` from
 
 `devtools::install_github("openpharma/mtdesign")`
 
+## Set up vignette environment
+
+``` r
+# By policy, on CRAN, use only two cores, no matter how many are available.
+if (requireNamespace("parallel", quietly = TRUE)) {
+  maxCores <- parallel::detectCores()
+  maxCores <- ifelse(identical(Sys.getenv("NOT_CRAN"), "true"), maxCores, min(maxCores, 2))
+} else {
+  maxCores <- 1
+}
+```
+
 ## Example
 
 Suppose that treatments with a response rate of less than 5% are of no
@@ -73,13 +85,19 @@ The power curves for both designs are easily plotted.
 powerPlot(simonDesign)
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 Obtaining the equivalent Mander & Thompson designs requires only a small
 change to the calls.
 
 ``` r
-manderDesign <- obtainDesign(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2)
+manderDesign <- obtainDesign(
+                  p0 = 0.05, 
+                  p1 = 0.25, 
+                  alpha = 0.05, 
+                  beta = 0.2, 
+                  cores = maxCores
+                )
 
 manderDesign %>%
   select(-Alpha, -Beta, -p0, -p1) %>%
@@ -97,7 +115,7 @@ manderDesign %>%
 powerPlot(manderDesign)
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 ### Constrained designs
 
@@ -111,7 +129,7 @@ there a (slightly) sub-optimal design that has n<sub>1</sub> = 8, n =
 x <- createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE)
 
 y <- x %>% filter(nStage1 == 8, nTotal == 16)
-z <- y %>% obtainDesign()
+z <- y %>% obtainDesign(cores = maxCores)
 #> Warning: No acceptable designs were found.
 if (nrow(z) == 0) {
   print("No acceptable designs were found.")
@@ -131,7 +149,7 @@ z1 <- y %>% augmentGrid()
 
 bestSize <- z1 %>%
   filter(Type1 < Alpha) %>%
-  slice(which.min(Beta))
+  slice_min(Type2)
 bestSize %>%
   select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
   kable(
@@ -149,7 +167,7 @@ Best sub-optimal design with required significance level
 ``` r
 bestPower <- z1 %>%
   filter(Type2 < Beta) %>%
-  slice(which.min(Alpha))
+  slice_min(Type1)
 
 bestPower %>%
   select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
@@ -183,7 +201,7 @@ plotData1 <- simonDesign %>%
 powerPlot(plotData1)
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
 ## Package structure
 
