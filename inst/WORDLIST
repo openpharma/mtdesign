@@ -7,11 +7,8 @@ Gergely
 Mander
 PETAlt
 PETNull
-Parallelisation
-SG
 Seshan
 VE
-al
 augmentGrid
 cct
 chunkSize
@@ -19,10 +16,8 @@ clinfun
 createGrid
 daroczig
 doi
-et
 ggplot
 github
-https
 ie
 io
 magrittr
@@ -32,11 +27,9 @@ nStage
 nTotal
 optimalAlt
 optimalNull
+org
 paralellisation
-parallelisation
-parallelising
 rFutility
 rSuccess
 rTotal
-responders
 tibble
