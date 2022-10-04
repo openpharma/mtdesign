@@ -30,9 +30,20 @@ Once available on CRAN, you can install `mtdesign` in the usual way:
 
 `install.packages("mtdesign")`
 
-You can install the development version of `mtdesign` from [GitHub](https://www.github.com/openpharma/mtdesign) with:
+You can install the development version of `mtdesign` from [GitHub](https://github.com/openpharma/mtdesign) with:
 
 `devtools::install_github("openpharma/mtdesign")`
+
+## Set up vignette environment
+```{r}
+# By policy, on CRAN, use only two cores, no matter how many are available.
+if (requireNamespace("parallel", quietly = TRUE)) {
+  maxCores <- parallel::detectCores()
+  maxCores <- ifelse(identical(Sys.getenv("NOT_CRAN"), "true"), maxCores, min(maxCores, 2))
+} else {
+  maxCores <- 1
+}
+```
 
 ## Example
 
@@ -61,7 +72,13 @@ powerPlot(simonDesign)
 Obtaining the equivalent Mander & Thompson designs requires only a small change to the calls.
 
 ```{r}
-manderDesign <- obtainDesign(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2)
+manderDesign <- obtainDesign(
+                  p0 = 0.05, 
+                  p1 = 0.25, 
+                  alpha = 0.05, 
+                  beta = 0.2, 
+                  cores = maxCores
+                )
 
 manderDesign %>%
   select(-Alpha, -Beta, -p0, -p1) %>%
@@ -78,7 +95,7 @@ Suppose a trial, for whatever reason, is restricted to using 8 participants in e
 x <- createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE)
 
 y <- x %>% filter(nStage1 == 8, nTotal == 16)
-z <- y %>% obtainDesign()
+z <- y %>% obtainDesign(cores = maxCores)
 if (nrow(z) == 0) {
   print("No acceptable designs were found.")
 } else {
@@ -96,7 +113,7 @@ z1 <- y %>% augmentGrid()
 
 bestSize <- z1 %>%
   filter(Type1 < Alpha) %>%
-  slice(which.min(Beta))
+  slice_min(Type2)
 bestSize %>%
   select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
   kable(
@@ -106,7 +123,7 @@ bestSize %>%
 
 bestPower <- z1 %>%
   filter(Type2 < Beta) %>%
-  slice(which.min(Alpha))
+  slice_min(Type1)
 
 bestPower %>%
   select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%

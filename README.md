@@ -1,3 +1,4 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # mtdesign
@@ -6,7 +7,6 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/mtdesign)](https://CRAN.R-project.org/package=mtdesign)
-
 <!-- badges: end -->
 
 ## Introduction
@@ -26,9 +26,21 @@ Once available on CRAN, you can install `mtdesign` in the usual way:
 `install.packages("mtdesign")`
 
 You can install the development version of `mtdesign` from
-[GitHub](https://www.github.com/openpharma/mtdesign) with:
+[GitHub](https://github.com/openpharma/mtdesign) with:
 
 `devtools::install_github("openpharma/mtdesign")`
+
+## Set up vignette environment
+
+``` r
+# By policy, on CRAN, use only two cores, no matter how many are available.
+if (requireNamespace("parallel", quietly = TRUE)) {
+  maxCores <- parallel::detectCores()
+  maxCores <- ifelse(identical(Sys.getenv("NOT_CRAN"), "true"), maxCores, min(maxCores, 2))
+} else {
+  maxCores <- 1
+}
+```
 
 ## Example
 
@@ -37,7 +49,7 @@ interest but those with a response rate of at least 25% are worthy of
 further development. A Simon’s 2-stage design to seek an efficacy signal
 with a significance level of 5% and a power of 80% is required.
 
-```r
+``` r
 library(mtdesign)
 library(knitr)
 library(dplyr)
@@ -58,7 +70,7 @@ simonDesign %>%
 ```
 
 | nTotal | nStage1 | rTotal | rFutility | Type1 | Type2 | PETNull | AveSizeNull | Criterion |
-| -----: | ------: | -----: | --------: | ----: | ----: | ------: | ----------: | :-------- |
+|-------:|--------:|-------:|----------:|------:|------:|--------:|------------:|:----------|
 |     17 |       9 |      2 |         0 | 0.047 | 0.188 |    0.63 |        12.0 | optimal   |
 |     16 |      12 |      2 |         0 | 0.043 | 0.199 |    0.54 |        13.8 | minimax   |
 
@@ -69,17 +81,23 @@ the power level achieved is 100% - 18.8% = 81.2%.
 
 The power curves for both designs are easily plotted.
 
-```r
+``` r
 powerPlot(simonDesign)
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
 
 Obtaining the equivalent Mander & Thompson designs requires only a small
 change to the calls.
 
-```r
-manderDesign <- obtainDesign(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2)
+``` r
+manderDesign <- obtainDesign(
+                  p0 = 0.05, 
+                  p1 = 0.25, 
+                  alpha = 0.05, 
+                  beta = 0.2, 
+                  cores = maxCores
+                )
 
 manderDesign %>%
   select(-Alpha, -Beta, -p0, -p1) %>%
@@ -87,18 +105,17 @@ manderDesign %>%
 ```
 
 | nTotal | nStage1 | rTotal | rFutility | rSuccess | Type1 | Type2 | PETNull | PETAlt | AveSizeNull | AveSizeAlt | Criterion   |
-| -----: | ------: | -----: | --------: | -------: | ----: | ----: | ------: | -----: | ----------: | ---------: | :---------- |
+|-------:|--------:|-------:|----------:|---------:|------:|------:|--------:|-------:|------------:|-----------:|:------------|
 |     17 |       9 |      2 |         0 |        2 | 0.047 |  0.19 |    0.64 |   0.47 |        11.9 |         NA | optimalNull |
 |     16 |      12 |      2 |         0 |        2 | 0.043 |  0.20 |    0.56 |   0.64 |        13.8 |         NA | minimaxNull |
 |     17 |       9 |      2 |         0 |        2 | 0.047 |  0.19 |    0.64 |   0.47 |        11.9 |         NA | optimalAlt  |
 |     16 |      12 |      2 |         0 |        2 | 0.043 |  0.20 |    0.56 |   0.64 |        13.8 |         NA | minimaxAlt  |
 
-```r
-
+``` r
 powerPlot(manderDesign)
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 ### Constrained designs
 
@@ -108,11 +125,11 @@ stage design is 0/9 2/17. That’s close to n<sub>1</sub> = 8, n = 16. Is
 there a (slightly) sub-optimal design that has n<sub>1</sub> = 8, n =
 16?
 
-```r
+``` r
 x <- createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE)
 
 y <- x %>% filter(nStage1 == 8, nTotal == 16)
-z <- y %>% obtainDesign()
+z <- y %>% obtainDesign(cores = maxCores)
 #> Warning: No acceptable designs were found.
 if (nrow(z) == 0) {
   print("No acceptable designs were found.")
@@ -127,12 +144,12 @@ if (nrow(z) == 0) {
 
 No, there isn’t. How close can we get?
 
-```r
+``` r
 z1 <- y %>% augmentGrid()
 
 bestSize <- z1 %>%
   filter(Type1 < Alpha) %>%
-  slice(which.min(Beta))
+  slice_min(Type2)
 bestSize %>%
   select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
   kable(
@@ -142,16 +159,15 @@ bestSize %>%
 ```
 
 | nTotal | nStage1 | rTotal | rFutility | Type1 | Type2 | PETNull | AveSizeNull |
-| -----: | ------: | -----: | --------: | ----: | ----: | ------: | ----------: |
+|-------:|--------:|-------:|----------:|------:|------:|--------:|------------:|
 |     16 |       8 |      2 |         0 | 0.039 | 0.229 |    0.66 |        10.7 |
 
 Best sub-optimal design with required significance level
 
-```r
-
+``` r
 bestPower <- z1 %>%
   filter(Type2 < Beta) %>%
-  slice(which.min(Alpha))
+  slice_min(Type1)
 
 bestPower %>%
   select(-Alpha, -Beta, -p0, -p1, -PETAlt, -AveSizeAlt) %>%
@@ -162,7 +178,7 @@ bestPower %>%
 ```
 
 | nTotal | nStage1 | rTotal | rFutility | Type1 | Type2 | PETNull | AveSizeNull |
-| -----: | ------: | -----: | --------: | ----: | ----: | ------: | ----------: |
+|-------:|--------:|-------:|----------:|------:|------:|--------:|------------:|
 |     16 |       8 |      1 |         0 | 0.151 | 0.127 |    0.66 |        10.7 |
 
 Best sub-optimal design with required power
@@ -178,28 +194,28 @@ level.
 The power curve for each of these designs can be compared with that for
 the globally optimal design.
 
-```r
+``` r
 plotData1 <- simonDesign %>%
   filter(Criterion == "optimal") %>%
   bind_rows(list(bestSize, bestPower))
 powerPlot(plotData1)
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
 ## Package structure
 
 The `mtdesign` package consists of three main functions:
 
-* `createGrid` creates the grid (of nStage1, rFutility, nTotal and
-  rTotal for Simon’s design or nStage1, rFutility, rSuccess, nTotal and
-  rTotal for a Mander & Thompson design) over which the brute force
-  search for the required design(s) is conducted
-* `augmentGrid`takes a grid created by `createGrid` and adds columns for
-  probability of early termination, Type 1 error, Type 2 error and
-  expected sample size to it.
-* `obtainDesign` takes an augmented grid and identifies the optimal and
-  minimax designs
+- `createGrid` creates the grid (of nStage1, rFutility, nTotal and
+    rTotal for Simon’s design or nStage1, rFutility, rSuccess, nTotal
+    and rTotal for a Mander & Thompson design) over which the brute
+    force search for the required design(s) is conducted
+- `augmentGrid`takes a grid created by `createGrid` and adds columns
+    for probability of early termination, Type 1 error, Type 2 error and
+    expected sample size to it.
+- `obtainDesign` takes an augmented grid and identifies the optimal
+    and minimax designs
 
 ## Error and warning messages and logging
 
@@ -224,13 +240,13 @@ attempt to speed up the evaluation of candidate designs.
 The `augmentGrid` function allows users some control over the
 parallelisation process:
 
-* The `parallel` parameter defaults to `TRUE` and defines whether or not
-  paralellisation is to be used.
-* The `cores` parameter specifies how many cores are to be used. The
-  default value, `NA` tells `mtdesign` to use all available (as defined
-  by `parallel::detectCores()`), cores.
-* The `minChunkSize` determines the smallest grid of candidate designs
-  that will trigger paralellisation. The default value is `100000`.
+- The `parallel` parameter defaults to `TRUE` and defines whether or
+    not paralellisation is to be used.
+- The `cores` parameter specifies how many cores are to be used. The
+    default value, `NA` tells `mtdesign` to use all available (as
+    defined by `parallel::detectCores()`), cores.
+- The `minChunkSize` determines the smallest grid of candidate designs
+    that will trigger paralellisation. The default value is `100000`.
 
 The `parallel` package is required for parallelisation. If
 parallelisation is both needed (ie the grid size exceeds `minChunkSize`)
@@ -244,18 +260,16 @@ more rows, a warning is produced.
 If, when installing or using the `mtdesign` package, you get an error
 regarding a syntax error in an`.hpp` file, similar to the following
 
-```r
-.../BH/include/boost/math/tools/fraction.hpp:84:48: error: ‘long double’ is not a class, struct, or union type using value_type = typename T::value_type;
-```
+    .../BH/include/boost/math/tools/fraction.hpp:84:48: error: ‘long double’ is not a class, struct, or union type using value_type = typename T::value_type;
 
 the issue is most likely a mismatch between the g++ compiler being used
 and the headers supplied by the `BH` package. There are only two
 solutions that I know of:
 
-* Upgrade g++
-* Downgrade the version of the `BH` package you are using. The
-  appropriate package version depends on the version of the g++ compiler
-  you are using.
+- Upgrade g++
+- Downgrade the version of the `BH` package you are using. The
+    appropriate package version depends on the version of the g++
+    compiler you are using.
 
 ## References
 
@@ -263,8 +277,8 @@ solutions that I know of:
 
 <div id="ref-LOGGER" class="csl-entry">
 
-Daróczi, Gergely. 2021. _Logger: A Lightweight, Modern and Flexible
-Logging Utility_. <https://daroczig.github.io/logger/>.
+Daróczi, Gergely. 2021. *Logger: A Lightweight, Modern and Flexible
+Logging Utility*. <https://daroczig.github.io/logger/>.
 
 </div>
 
@@ -272,9 +286,8 @@ Logging Utility_. <https://daroczig.github.io/logger/>.
 
 Mander, AP, and Thompson, SG. 2010. “Two-Stage Designs Optimal Under the
 Alternative Hypothesis for Phase II Cancer Clinical Trials.”
-_Contemporary Clinical Trials_ 31 (6): 572–78.
-\[<https://doi.org/10.1016/j.cct.2010.07.008>:
-10.1016/j.cct.2010.07.008]\(<https://doi.org/10.1016/j.cct.2010.07.008>: 10.1016/j.cct.2010.07.008).
+*Contemporary Clinical Trials* 31 (6): 572–78.
+<https://doi.org/><https://doi.org/10.1016/j.cct.2010.07.008>.
 
 </div>
 
@@ -288,7 +301,7 @@ Functions.” Software. <https://CRAN.R-project.org/package=clinfun>.
 <div id="ref-SIMON" class="csl-entry">
 
 Simon, R. 1989. “Optimal Two-Stage Designs for Phase II Clinical
-Trials.” _Controlled Clinical Trials_ 10 (1): 1–10.
+Trials.” *Controlled Clinical Trials* 10 (1): 1–10.
 <https://doi.org/><https://doi.org/10.1016/0197-2456(89)90015-9>.
 
 </div>
