@@ -51,12 +51,6 @@
 <li class="nav-item">
   <a class="nav-link" href="news/index.html">Changelog</a>
 </li>
-<!-- start dropdown for versions --> <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle"
-          data-bs-toggle="dropdown" role="button"
-          aria-expanded="false" aria-haspopup="true"
-          id="dropdown-versions">Versions</a> <div class="dropdown-menu" aria-labelledby="dropdown-versions"> <a class="dropdown-item" data-toggle="tooltip" title="" href="https://openpharma.github.io/mtdesign/main">main</a> </div></li>
-<!-- end dropdown for versions -->
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
@@ -81,6 +75,7 @@
 </h1></div>
 <!-- badges: start -->
 
+<!-- badges: end -->
 <div class="section level2">
 <h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
@@ -128,16 +123,16 @@
 <span><span class="va">simonDesign</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">Alpha</span>, <span class="op">-</span><span class="va">Beta</span>, <span class="op">-</span><span class="va">p0</span>, <span class="op">-</span><span class="va">p1</span>, <span class="op">-</span><span class="va">PETAlt</span>, <span class="op">-</span><span class="va">AveSizeAlt</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span>digits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">3</span>, <span class="fl">3</span>, <span class="fl">2</span>, <span class="fl">1</span>, <span class="cn">NA</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<table style="width:100%;" class="table">
+<table class="table">
 <colgroup>
 <col width="9%">
 <col width="10%">
 <col width="9%">
 <col width="13%">
-<col width="8%">
-<col width="8%">
+<col width="7%">
+<col width="7%">
 <col width="10%">
-<col width="15%">
+<col width="16%">
 <col width="13%">
 </colgroup>
 <thead><tr class="header">
@@ -184,12 +179,12 @@
 <p>Obtaining the equivalent Mander &amp; Thompson designs requires only a small change to the calls.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">manderDesign</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/obtainDesign.html">obtainDesign</a></span><span class="op">(</span></span>
-<span>                  p0 <span class="op">=</span> <span class="fl">0.05</span>, </span>
-<span>                  p1 <span class="op">=</span> <span class="fl">0.25</span>, </span>
-<span>                  alpha <span class="op">=</span> <span class="fl">0.05</span>, </span>
-<span>                  beta <span class="op">=</span> <span class="fl">0.2</span>, </span>
-<span>                  cores <span class="op">=</span> <span class="va">maxCores</span></span>
-<span>                <span class="op">)</span></span>
+<span>  p0 <span class="op">=</span> <span class="fl">0.05</span>,</span>
+<span>  p1 <span class="op">=</span> <span class="fl">0.25</span>,</span>
+<span>  alpha <span class="op">=</span> <span class="fl">0.05</span>,</span>
+<span>  beta <span class="op">=</span> <span class="fl">0.2</span>,</span>
+<span>  cores <span class="op">=</span> <span class="va">maxCores</span></span>
+<span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">manderDesign</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">Alpha</span>, <span class="op">-</span><span class="va">Beta</span>, <span class="op">-</span><span class="va">p0</span>, <span class="op">-</span><span class="va">p1</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
@@ -201,13 +196,13 @@
 <col width="6%">
 <col width="9%">
 <col width="8%">
-<col width="6%">
-<col width="6%">
+<col width="5%">
+<col width="5%">
 <col width="7%">
 <col width="6%">
-<col width="11%">
+<col width="12%">
 <col width="10%">
-<col width="11%">
+<col width="12%">
 </colgroup>
 <thead><tr class="header">
 <th align="right">nTotal</th>
@@ -283,7 +278,8 @@
 </tbody>
 </table>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/powerPlot.html">powerPlot</a></span><span class="op">(</span><span class="va">manderDesign</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span></span>
+<span><span class="fu"><a href="reference/powerPlot.html">powerPlot</a></span><span class="op">(</span><span class="va">manderDesign</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%"></p>
 <div class="section level3">
 <h3 id="constrained-designs">Constrained designs<a class="anchor" aria-label="anchor" href="#constrained-designs"></a>
@@ -319,14 +315,14 @@
 <span>  <span class="op">)</span></span></code></pre></div>
 <table class="table">
 <colgroup>
-<col width="11%">
+<col width="10%">
 <col width="12%">
-<col width="11%">
-<col width="15%">
-<col width="9%">
-<col width="9%">
+<col width="10%">
+<col width="16%">
+<col width="8%">
+<col width="8%">
 <col width="12%">
-<col width="18%">
+<col width="19%">
 </colgroup>
 <thead><tr class="header">
 <th align="right">nTotal</th>
@@ -351,7 +347,8 @@
 </table>
 <p>Best sub-optimal design with required significance level</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">bestPower</span> <span class="op">&lt;-</span> <span class="va">z1</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<code class="sourceCode R"><span></span>
+<span><span class="va">bestPower</span> <span class="op">&lt;-</span> <span class="va">z1</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">Type2</span> <span class="op">&lt;</span> <span class="va">Beta</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice_min</a></span><span class="op">(</span><span class="va">Type1</span><span class="op">)</span></span>
 <span></span>
@@ -363,14 +360,14 @@
 <span>  <span class="op">)</span></span></code></pre></div>
 <table class="table">
 <colgroup>
-<col width="11%">
+<col width="10%">
 <col width="12%">
-<col width="11%">
-<col width="15%">
-<col width="9%">
-<col width="9%">
+<col width="10%">
+<col width="16%">
+<col width="8%">
+<col width="8%">
 <col width="12%">
-<col width="18%">
+<col width="19%">
 </colgroup>
 <thead><tr class="header">
 <th align="right">nTotal</th>
@@ -439,7 +436,7 @@
 <h2 id="troubleshooting">Troubleshooting<a class="anchor" aria-label="anchor" href="#troubleshooting"></a>
 </h2>
 <p>If, when installing or using the <code>mtdesign</code> package, you get an error regarding a syntax error in an<code>.hpp</code> file, similar to the following</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>...<span class="sc">/</span>BH<span class="sc">/</span>include<span class="sc">/</span>boost<span class="sc">/</span>math<span class="sc">/</span>tools<span class="sc">/</span>fraction.hpp<span class="sc">:</span><span class="dv">84</span><span class="sc">:</span><span class="dv">48</span><span class="sc">:</span> error<span class="sc">:</span> ‘long double’ is not a class, struct, or union type using value_type <span class="ot">=</span> typename T<span class="sc">::</span>value_type;</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>...<span class="sc">/</span>BH<span class="sc">/</span>include<span class="sc">/</span>boost<span class="sc">/</span>math<span class="sc">/</span>tools<span class="sc">/</span>fraction.hpp<span class="sc">:</span><span class="dv">84</span><span class="sc">:</span><span class="dv">48</span><span class="sc">:</span> error<span class="sc">:</span> ‘long double’ is not a class, struct, or union type using value_type <span class="ot">=</span> typename T<span class="sc">::</span>value_type;</span></code></pre></div>
 <p>the issue is most likely a mismatch between the g++ compiler being used and the headers supplied by the <code>BH</code> package. There are only two solutions that I know of:</p>
 <ul>
 <li>Upgrade g++</li>
@@ -500,6 +497,7 @@ Simon, R. 1989. “Optimal Two-Stage Designs for Phase II Clinical Trials.” <e
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://CRAN.R-project.org/package=mtdesign" class="external-link"><img src="https://www.r-pkg.org/badges/version/mtdesign" alt="CRAN status"></a></li>
+<li><a href="https://github.com/openpharma/mtdesign/blob/_xml_coverage_reports/data/main/coverage.xml" class="external-link"><img src="https://raw.githubusercontent.com/openpharma/mtdesign/_xml_coverage_reports/data/main/badge.svg" alt="Test Coverage"></a></li>
 </ul>
 </div>
 
