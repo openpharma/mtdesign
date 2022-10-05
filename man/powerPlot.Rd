@@ -20,8 +20,8 @@ the ggplot object containing the power curve(s)
 Plot the power curve(s) for the given design(s)
 }
 \examples{
-createGrid(p0=0.05, p1=0.25, alpha=0.05, beta=0.2, mander=FALSE) \%>\%
-  augmentGrid(cores=2) \%>\%
+createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE) \%>\%
+  augmentGrid(cores = 2) \%>\%
   obtainDesign() \%>\%
-  powerPlot(probs=seq(0, 0.5, 0.025))
+  powerPlot(probs = seq(0, 0.5, 0.025))
 }
