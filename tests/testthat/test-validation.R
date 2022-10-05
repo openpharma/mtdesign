@@ -3,6 +3,7 @@ test_that("createGrid returns appropriate error with bad input", {
   expect_error(createGrid(p0=NULL, p1=0.4, alpha=0.1, beta=0.1, mander=FALSE))
   expect_error(createGrid(p0=2, p1=0.4, alpha=0.1, beta=0.1, mander=FALSE))
   expect_error(createGrid(p0=-1, p1=0.4, alpha=0.1, beta=0.1, mander=FALSE))
+  expect_error(createGrid(p0=-1, p1=0.4, alpha=0.1, beta=NA, power=NA, mander=FALSE))
 
   expect_error(createGrid(p0=0.2, p1=NA, alpha=0.1, beta=0.1, mander=FALSE))
   expect_error(createGrid(p0=0.2, p1=NULL, alpha=0.1, beta=0.1, mander=FALSE))
