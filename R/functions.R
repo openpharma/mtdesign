@@ -77,7 +77,7 @@ createGrid <- function(p0,
   logger::log_debug("Entry")
   # Validation
   if (is.na(p0)) stop("You must provide a value for p0")
-  if (is.na(p0)) stop("You must provide a value for p1")
+  if (is.na(p1)) stop("You must provide a value for p1")
   if (p0 < 0 || p0 > 1) stop("p0 must be between 0 and 1")
   if (p1 < 0 || p1 > 1) stop("p1 must be between 0 and 1")
   if (p1 <= p0) stop("p1 must be strictly greater than p0")
