@@ -50,4 +50,12 @@ test_that("obtainDesign returns appropriate error with bad input", {
   expect_error(obtainDesign(grid=NULL, p0=0.25, p1=0.45, alpha=1, beta=0.2, fullGrid=TRUE))
   expect_error(obtainDesign(grid=NULL, p0=0.25, p1=0.45, alpha=0.05, beta=0, fullGrid=TRUE))
   expect_error(obtainDesign(grid=NULL, p0=0.25, p1=0.45, alpha=0.05, beta=1, fullGrid=TRUE))
+
+  expect_error(obtainDesign(grid=tibble::tibble()))
 })
+
+test_that("powerPlot returns appropriate error with bad input", {
+  expect_error(powerPlot(grid=NA))
+  expect_error(powerPlot(grid=tibble::tibble()))
+})
+
