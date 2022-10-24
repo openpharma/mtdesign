@@ -29,3 +29,4 @@ vignettes/*.R
 vignettes/*.html
 vignettes/*.md
 .vscode/
+lib/

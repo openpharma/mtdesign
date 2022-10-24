@@ -3,7 +3,7 @@ url: https://openpharma.github.io/mtdesign
 
 template:
   bootstrap: 5
-  bootswatch: cerulean
+  bootswatch: flatly
 
 navbar:
   right:

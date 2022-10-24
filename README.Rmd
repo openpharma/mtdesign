@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/mtdesign)](https://CRAN.R-project.org/package=mtdesign)
+[![Test Coverage](https://raw.githubusercontent.com/openpharma/mtdesign/_xml_coverage_reports/data/main/badge.svg)](https://github.com/openpharma/mtdesign/blob/_xml_coverage_reports/data/main/coverage.xml)
 <!-- badges: end -->
 
 ## Introduction
@@ -73,12 +74,12 @@ Obtaining the equivalent Mander & Thompson designs requires only a small change 
 
 ```{r}
 manderDesign <- obtainDesign(
-                  p0 = 0.05, 
-                  p1 = 0.25, 
-                  alpha = 0.05, 
-                  beta = 0.2, 
-                  cores = maxCores
-                )
+  p0 = 0.05,
+  p1 = 0.25,
+  alpha = 0.05,
+  beta = 0.2,
+  cores = maxCores
+)
 
 manderDesign %>%
   select(-Alpha, -Beta, -p0, -p1) %>%
@@ -169,9 +170,11 @@ The `parallel` package is required for parallelisation.  If parallelisation is b
 
 ## Troubleshooting
 If, when installing or using the `mtdesign` package, you get an error regarding a syntax error in an`.hpp` file, similar to the following
-```
+
+```R
 .../BH/include/boost/math/tools/fraction.hpp:84:48: error: ‘long double’ is not a class, struct, or union type using value_type = typename T::value_type;
 ```
+
 the issue is most likely a mismatch between the g++ compiler being used and the headers supplied by the `BH` package.  There are only two solutions that I know of:
 
 *  Upgrade g++

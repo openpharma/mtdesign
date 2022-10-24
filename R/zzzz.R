@@ -12,7 +12,7 @@ p0 <- NULL
 p1 <- NULL
 pReject <- NULL
 pResponse <- NULL
-rFutility<- NULL
+rFutility <- NULL
 rSuccess <- NULL
 rTotal <- NULL
 Chunk <- NULL
