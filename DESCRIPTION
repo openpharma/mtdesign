@@ -2,7 +2,7 @@ Package: mtdesign
 Type: Package
 Title: Mander and Thompson Designs
 Version: 0.1.0
-Date: 04-Oct-2022
+Date: 2022-10-04
 Authors@R: person(
              given = "John",
              family = "Kirkpatrick",
@@ -11,10 +11,10 @@ Authors@R: person(
              comment = c(ORCID = "0000-0001-7790-3708")
            )
 Description: Implements Mander & Thompson's (2010) 
-    <https://doi.org/10.1016/j.cct.2010.07.008> methods for two-stage designs
+    <doi:10.1016/j.cct.2010.07.008> methods for two-stage designs
     optimal under the alternative hypothesis for phase II [cancer] trials.  Also
     provides an implementation of Simon's (1989) 
-    <https://doi.org/10.1016/0197-2456(89)90015-9> original methodology and 
+    <doi:10.1016/0197-2456(89)90015-9> original methodology and 
     allows exploration of the operating characteristics of sub-optimal designs.
 Language: en-GB
 License: GPL (>= 3)

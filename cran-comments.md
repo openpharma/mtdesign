@@ -1,3 +1,8 @@
+## Third resubmission
+In DESCRIPTION, I have:
+* Amended the date record to `Date: 2022-10-04`.
+* Amended DOI references from `<https://doi.org/10...` to `<doi:10...>.
+
 ## Second resubmission
 I have
 
