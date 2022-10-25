@@ -1,3 +1,6 @@
+## Fourth resubmission
+In README.md, I have changed "https://doi.org/..." to "https://www.doi.org/...".  I was confused by the request to change "http://" to "https://" since the URLs already use "https://". If the change is not what was expected, please clarify.
+
 ## Third resubmission
 In DESCRIPTION, I have:
 * Amended the date record to `Date: 2022-10-04`.
