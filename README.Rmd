@@ -153,7 +153,7 @@ The `mtdesign` package consists of three main functions:
 * `obtainDesign` takes an augmented grid and identifies the optimal and minimax designs
 
 ## Error and warning messages and logging
-The `mtdesign` package supports logging via the `logger` package [@LOGGER].  Most functions simply report Entry and Exit at the `DEBUG` level.  
+The `mtdesign` package supports logging via the `futile.logger` package [@LOGGER].  Most functions simply report Entry and Exit at the `DEBUG` level.  
 
 The `augmentGrid` function reports steps of the parallelisation process at the `TRACE` level.
 
