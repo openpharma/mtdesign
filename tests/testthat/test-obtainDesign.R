@@ -1,4 +1,4 @@
-logger::log_threshold(logger::ERROR, namespace = "mtdesign")
+futile.logger::flog.threshold(futile.logger::ERROR)
 
 test_that("obtainDesign works", {
   # Mander & Thompson Section 3.2

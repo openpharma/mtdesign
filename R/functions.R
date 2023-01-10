@@ -2,9 +2,8 @@
 #' @importFrom Rcpp sourceCpp
 
 .onLoad <- function(libname, pkgname) {
-  logger::log_layout(
-    logger::layout_glue_generator(format = "{namespace} {time} {level} {fn}: {msg}"),
-    namespace = "mtdesign"
+  futile.logger::flog.layout(
+    futile.logger::layout.format("~n ~t ~l ~f: ~m")
   )
 }
 
@@ -13,26 +12,26 @@
 }
 
 isBasicGrid <- function(grid) {
-  logger::log_debug("Entry")
+  futile.logger::flog.debug("Entry")
   if (!methods::is(grid, "data.frame")) {
     return(FALSE)
   }
   columnsRequired <- c("p0", "p1", "nStage1", "nTotal", "rFutility", "rTotal")
   rv <- length(intersect(names(grid), columnsRequired)) == length(columnsRequired)
-  logger::log_debug("Exit")
+  futile.logger::flog.debug("Exit")
   return(rv)
 }
 
 isManderGrid <- function(grid) {
-  logger::log_debug("Entry")
+  futile.logger::flog.debug("Entry")
   columnsRequired <- c("rSuccess")
   rv <- isBasicGrid(grid) & length(intersect(names(grid), columnsRequired)) == length(columnsRequired)
-  logger::log_debug("Exit")
+  futile.logger::flog.debug("Exit")
   return(rv)
 }
 
 isAugmented <- function(grid) {
-  logger::log_debug("Entry")
+  futile.logger::flog.debug("Entry")
   if (!isBasicGrid(grid)) {
     return(NA)
   }
@@ -40,7 +39,7 @@ isAugmented <- function(grid) {
     "Type1", "Type2", "PETNull", "PETAlt", "AveSizeNull",
     "AveSizeAlt"
   )
-  logger::log_debug("Exit")
+  futile.logger::flog.debug("Exit")
   rv <- length(intersect(names(grid), columnsRequired)) == length(columnsRequired)
   return(rv)
 }
@@ -74,7 +73,7 @@ createGrid <- function(p0,
                        nMin = NA,
                        nMax = NA,
                        mander = TRUE) {
-  logger::log_debug("Entry")
+  futile.logger::flog.debug("Entry")
   # Validation
   if (is.na(p0)) stop("You must provide a value for p0")
   if (is.na(p1)) stop("You must provide a value for p1")
@@ -106,13 +105,13 @@ createGrid <- function(p0,
   }
   if (is.na(nMin)) {
     nMin <- bounds["min"]
-    logger::log_debug(paste0("Using default value for nMin: ", nMin))
+    futile.logger::flog.debug(paste0("Using default value for nMin: ", nMin))
   }
   if (is.na(nMax)) {
     nMax <- bounds["max"]
-    logger::log_debug(paste0("Using default value for nMax: ", nMax))
+    futile.logger::flog.debug(paste0("Using default value for nMax: ", nMax))
   }
-  logger::log_debug(
+  futile.logger::flog.debug(
     paste0(
       "One stage sample size is ",
       bounds["n"],
@@ -142,11 +141,11 @@ createGrid <- function(p0,
   # so build up and filter in stages.
   d <- tibble::tibble() %>% tidyr::expand(nTotal, nStage1)
   d <- d %>% dplyr::filter(nTotal >= nMin, nStage1 < nTotal)
-  logger::log_trace(paste0("Building grid - nTotal, nStage1: ", nrow(d)))
+  futile.logger::flog.trace(paste0("Building grid - nTotal, nStage1: ", nrow(d)))
 
   d <- d %>% tidyr::expand(tidyr::nesting(nTotal, nStage1), rTotal)
   d <- d %>% dplyr::filter(rTotal < nTotal)
-  logger::log_trace(paste0("Building grid - nTotal, nStage1, rTotal: ", nrow(d)))
+  futile.logger::flog.trace(paste0("Building grid - nTotal, nStage1, rTotal: ", nrow(d)))
 
   d <- d %>% tidyr::expand(tidyr::nesting(nTotal, nStage1, rTotal), rFutility)
   d <- d %>% dplyr::filter(
@@ -155,7 +154,7 @@ createGrid <- function(p0,
     rFutility < nStage1,
     (rTotal - rFutility) < (nTotal - nStage1)
   )
-  logger::log_trace(
+  futile.logger::flog.trace(
     paste0(
       "Building grid - nTotal, nStage1, rTotal, rFutility: ",
       nrow(d)
@@ -172,7 +171,7 @@ createGrid <- function(p0,
         rSuccess > rFutility,
         rSuccess <= nStage1
       )
-    logger::log_trace(
+    futile.logger::flog.trace(
       paste0(
         "Building grid - nTotal, nStage1, rTotal, rFutility, rSuccess: ",
         nrow(d)
@@ -189,8 +188,8 @@ createGrid <- function(p0,
   if (!mander) {
     d <- d %>% dplyr::select(-rSuccess)
   }
-  logger::log_trace(paste0("Grid has ", nrow(d), " rows."))
-  logger::log_debug("Exit")
+  futile.logger::flog.trace(paste0("Grid has ", nrow(d), " rows."))
+  futile.logger::flog.debug("Exit")
   return(d)
 }
 
@@ -208,7 +207,7 @@ createGrid <- function(p0,
 #' \code{floor()} and \code{ceiling()} are applied as appropriate.
 #' @export
 searchBounds <- function(p0, p1, alpha = 0.05, beta = 0.2, twoSided = TRUE) {
-  logger::log_debug("Entry")
+  futile.logger::flog.debug("Entry")
   if (twoSided) alpha <- alpha / 2
 
   # Sample size formula based on Fleiss JL, Levin B and Paik MC (2003).
@@ -221,7 +220,7 @@ searchBounds <- function(p0, p1, alpha = 0.05, beta = 0.2, twoSided = TRUE) {
   n <- n + 1 / abs(p0 - p1)
   # Bounds based on ????
   rv <- c("n" = ceiling(n), "min" = floor(n * 0.8), "max" = ceiling(n * 2))
-  logger::log_debug("Exit")
+  futile.logger::flog.debug("Exit")
   return(rv)
 }
 
@@ -244,11 +243,11 @@ searchBounds <- function(p0, p1, alpha = 0.05, beta = 0.2, twoSided = TRUE) {
 #'   augmentGrid(parallel = FALSE)
 #' @export
 augmentGrid <- function(d, parallel = TRUE, cores = NA, minChunkSize = 100000) {
-  logger::log_debug("Entry")
+  futile.logger::flog.debug("Entry")
   k <- d %>% nrow()
   if (parallel) {
     if (k < minChunkSize) {
-      logger::log_info(
+      futile.logger::flog.info(
         paste0(
           "Parallelisation has been requested, but the grid size [", k,
           "] is less than the minimum chunk size [", minChunkSize,
@@ -266,22 +265,22 @@ augmentGrid <- function(d, parallel = TRUE, cores = NA, minChunkSize = 100000) {
     if (is.na(cores)) {
       cores <- parallel::detectCores()
     }
-    logger::log_trace("Starting parallelisation")
-    logger::log_trace(paste0("Requesting ", cores, " cores"))
-    logger::log_trace(paste0("k is ", k))
+    futile.logger::flog.trace("Starting parallelisation")
+    futile.logger::flog.trace(paste0("Requesting ", cores, " cores"))
+    futile.logger::flog.trace(paste0("k is ", k))
     chunkSize <- ceiling(k / cores)
-    logger::log_trace(paste0("Creating chunk list.  Chunk size is ", chunkSize))
+    futile.logger::flog.trace(paste0("Creating chunk list.  Chunk size is ", chunkSize))
     tmp <- d %>% dplyr::mutate(Chunk = ceiling(dplyr::row_number() / chunkSize))
     parallelList <- tmp %>%
       dplyr::group_by(Chunk) %>%
       dplyr::group_map(function(.x, .y) .x)
-    logger::log_trace("Creating cluster")
+    futile.logger::flog.trace("Creating cluster")
     cluster <- parallel::makeCluster(cores)
-    logger::log_trace("Initialising nodes")
+    futile.logger::flog.trace("Initialising nodes")
     parallel::clusterEvalQ(cluster, {
       library(parallel)
     })
-    logger::log_trace("Running parLapply")
+    futile.logger::flog.trace("Running parLapply")
     d <- parallel::parLapply(
       cluster,
       parallelList,
@@ -289,11 +288,11 @@ augmentGrid <- function(d, parallel = TRUE, cores = NA, minChunkSize = 100000) {
       parallel = FALSE
     ) %>%
       dplyr::bind_rows()
-    logger::log_trace("Stopping cluster")
+    futile.logger::flog.trace("Stopping cluster")
     suppressWarnings(parallel::stopCluster(cluster))
   } else {
     if (k >= 1e6) {
-      logger::log_info(
+      futile.logger::flog.info(
         paste0(
           "The grid contains ",
           k,
@@ -311,7 +310,7 @@ augmentGrid <- function(d, parallel = TRUE, cores = NA, minChunkSize = 100000) {
   if (isManderGrid(d)) {
     d <- d %>% dplyr::mutate(rSuccess = as.integer(rSuccess))
   }
-  logger::log_debug("Exit")
+  futile.logger::flog.debug("Exit")
   return(d)
 }
 
@@ -375,7 +374,7 @@ obtainDesign <- function(grid = NULL,
                          beta = ifelse(is.null(grid), 0.1, NA),
                          fullGrid = FALSE,
                          ...) {
-  logger::log_debug("Entry")
+  futile.logger::flog.debug("Entry")
   # Initialise
   dots <- list(...)
   # Validate
@@ -392,16 +391,16 @@ obtainDesign <- function(grid = NULL,
       stop("Grid must be a tibble created by createGrid()")
     }
     if (!is.na(p0)) {
-      logger::log_warn("A valid grid has been supplied.  Ignoring p0...")
+      futile.logger::flog.warn("A valid grid has been supplied.  Ignoring p0...")
     }
     if (!is.na(p1)) {
-      logger::log_warn("A valid grid has been supplied.  Ignoring p1...")
+      futile.logger::flog.warn("A valid grid has been supplied.  Ignoring p1...")
     }
     if (!is.na(alpha)) {
-      logger::log_warn("A valid grid has been supplied.  Ignoring alpha...")
+      futile.logger::flog.warn("A valid grid has been supplied.  Ignoring alpha...")
     }
     if (!is.na(beta)) {
-      logger::log_warn("A valid grid has been supplied.  Ignoring beta...")
+      futile.logger::flog.warn("A valid grid has been supplied.  Ignoring beta...")
     }
   }
 
@@ -438,7 +437,7 @@ obtainDesign <- function(grid = NULL,
       )
     if (nrow(acceptableGrid) == 0) {
       rlang::warn("No acceptable designs were found.")
-      logger::log_warn("No acceptable designs were found.")
+      futile.logger::flog.warn("No acceptable designs were found.")
     }
 
     rv <- vector("list", 4)
@@ -472,7 +471,7 @@ obtainDesign <- function(grid = NULL,
     }
     rv <- dplyr::bind_rows(rv)
     class(rv) <- class(grid)
-    logger::log_debug("Exit")
+    futile.logger::flog.debug("Exit")
     return(rv)
   }
 }
@@ -491,7 +490,7 @@ obtainDesign <- function(grid = NULL,
 #'   powerPlot(probs = seq(0, 0.5, 0.025))
 #' @export
 powerPlot <- function(grid, probs = seq(0, 1, 0.01)) {
-  logger::log_debug("Entry")
+  futile.logger::flog.debug("Entry")
   if (is.null(grid)) stop("grid cannot be null")
   if (!isBasicGrid(grid)) stop("Grid must be a tibble created by createGrid()")
 
@@ -610,6 +609,6 @@ powerPlot <- function(grid, probs = seq(0, 1, 0.01)) {
     ) +
     ggplot2::theme_light() +
     ggplot2::theme(legend.title = ggplot2::element_blank())
-  logger::log_debug("Exit")
+  futile.logger::flog.debug("Exit")
   return(plot)
 }

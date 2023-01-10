@@ -221,9 +221,9 @@ The `mtdesign` package consists of three main functions:
 
 ## Error and warning messages and logging
 
-The `mtdesign` package supports logging via the `logger` package
-(Daróczi 2021). Most functions simply report Entry and Exit at the
-`DEBUG` level.
+The `mtdesign` package supports logging via the `futile.logger` package
+(Rowe 2016). Most functions simply report Entry and Exit at the `DEBUG`
+level.
 
 The `augmentGrid` function reports steps of the parallelisation process
 at the `TRACE` level.
@@ -279,19 +279,18 @@ solutions that I know of:
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-LOGGER" class="csl-entry">
-
-Daróczi, Gergely. 2021. *Logger: A Lightweight, Modern and Flexible
-Logging Utility*. <https://daroczig.github.io/logger/>.
-
-</div>
-
 <div id="ref-MANDER" class="csl-entry">
 
 Mander, AP, and Thompson, SG. 2010. “Two-Stage Designs Optimal Under the
 Alternative Hypothesis for Phase II Cancer Clinical Trials.”
 *Contemporary Clinical Trials* 31 (6): 572–78.
 https://doi.org/<https://www.doi.org/10.1016/j.cct.2010.07.008>.
+
+</div>
+
+<div id="ref-LOGGER" class="csl-entry">
+
+Rowe, Brian Lee Yung. 2016. *Futile.logger: A Logging Utility for r*.
 
 </div>
 
