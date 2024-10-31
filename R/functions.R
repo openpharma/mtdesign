@@ -206,14 +206,16 @@ createGrid <- function(p0,
 #' @export
 searchBounds <- function(p0, p1, alpha = 0.05, beta = 0.2, twoSided = TRUE) {
   futile.logger::flog.debug("Entry")
-  if (twoSided) alpha <- alpha / 2
 
+  if (twoSided) alpha <- alpha / 2
   # Sample size formula based on Fleiss JL, Levin B and Paik MC (2003).
   # Statistical Methods for Rates and Proportions, Third Edition,
   # John Wiley & Sons, New York
+  #nolint start
   n <- ((stats::qnorm(1 - alpha) * sqrt(p0 * (1 - p0)) +
     stats::qnorm(1 - beta) * sqrt(p1 * (1 - p1))) /
     (p0 - p1))^2
+  #nolint end
   # Continuity correction from Fleiss et al
   n <- n + 1 / abs(p0 - p1)
   # Bounds based on ????
