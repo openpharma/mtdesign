@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="augmentGrid" timestamp="2024-10-31T15:05:17Z" hostname="64cfee7873d5" tests="14" skipped="0" failures="0" errors="0" time="0.242">
-    <testcase time="0.173" classname="augmentGrid" name="augmentGrid_works"/>
-    <testcase time="0.02" classname="augmentGrid" name="augmentGrid_works"/>
+  <testsuite name="augmentGrid" timestamp="2024-10-31T15:17:23Z" hostname="a49acd303004" tests="14" skipped="0" failures="0" errors="0" time="0.249">
+    <testcase time="0.178" classname="augmentGrid" name="augmentGrid_works"/>
+    <testcase time="0.021" classname="augmentGrid" name="augmentGrid_works"/>
     <testcase time="0.013" classname="augmentGrid" name="augmentGrid_works"/>
-    <testcase time="0.004" classname="augmentGrid" name="augmentGrid_works"/>
-    <testcase time="0.003" classname="augmentGrid" name="augmentGrid_works"/>
-    <testcase time="0.003" classname="augmentGrid" name="augmentGrid_works"/>
     <testcase time="0.003" classname="augmentGrid" name="augmentGrid_works"/>
     <testcase time="0.004" classname="augmentGrid" name="augmentGrid_works"/>
     <testcase time="0.003" classname="augmentGrid" name="augmentGrid_works"/>
@@ -14,136 +11,140 @@
     <testcase time="0.004" classname="augmentGrid" name="augmentGrid_works"/>
     <testcase time="0.003" classname="augmentGrid" name="augmentGrid_works"/>
     <testcase time="0.003" classname="augmentGrid" name="augmentGrid_works"/>
+    <testcase time="0.004" classname="augmentGrid" name="augmentGrid_works"/>
+    <testcase time="0.00299999999999989" classname="augmentGrid" name="augmentGrid_works"/>
     <testcase time="0.003" classname="augmentGrid" name="augmentGrid_works"/>
+    <testcase time="0.004" classname="augmentGrid" name="augmentGrid_works"/>
   </testsuite>
-  <testsuite name="createGrid" timestamp="2024-10-31T15:05:17Z" hostname="64cfee7873d5" tests="36" skipped="0" failures="0" errors="0" time="0.175">
-    <testcase time="0.0379999999999999" classname="createGrid" name="createGrid_works"/>
+  <testsuite name="createGrid" timestamp="2024-10-31T15:17:23Z" hostname="a49acd303004" tests="37" skipped="0" failures="0" errors="0" time="0.273">
+    <testcase time="0.039" classname="createGrid" name="createGrid_works"/>
     <testcase time="0.004" classname="createGrid" name="createGrid_works"/>
     <testcase time="0.005" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.005" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.002" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.002" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.002" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.004" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.004" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.026" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.005" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.005" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.002" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.002" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.002" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.00299999999999989" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.002" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.004" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
-    <testcase time="0.004" classname="createGrid" name="createGrid_works"/>
     <testcase time="0.00600000000000001" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.002" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.002" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.004" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.004" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.0259999999999999" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.004" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.005" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.005" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.002" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.002" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.003" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.00300000000000011" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.00299999999999989" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.004" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.00300000000000011" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.00299999999999989" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.00600000000000001" classname="createGrid" name="createGrid_works"/>
+    <testcase time="0.093" classname="createGrid" name="createGrid_works_when_both_nMin_and_nMax_are_specified_and_logging_is_enabled"/>
   </testsuite>
-  <testsuite name="isAugmentedGrid" timestamp="2024-10-31T15:05:17Z" hostname="64cfee7873d5" tests="10" skipped="0" failures="0" errors="0" time="0.085">
-    <testcase time="0.0360000000000001" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
-    <testcase time="0.00599999999999978" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
-    <testcase time="0.00500000000000012" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
-    <testcase time="0.00499999999999989" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
-    <testcase time="0.00700000000000012" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
-    <testcase time="0.00499999999999989" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
-    <testcase time="0.00600000000000001" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
-    <testcase time="0.00500000000000012" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
-    <testcase time="0.00499999999999989" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
-    <testcase time="0.00500000000000012" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
+  <testsuite name="isAugmentedGrid" timestamp="2024-10-31T15:17:24Z" hostname="a49acd303004" tests="10" skipped="0" failures="0" errors="0" time="0.177">
+    <testcase time="0.0509999999999999" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
+    <testcase time="0.0150000000000001" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
+    <testcase time="0.0129999999999999" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
+    <testcase time="0.014" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
+    <testcase time="0.014" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
+    <testcase time="0.0170000000000001" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
+    <testcase time="0.014" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
+    <testcase time="0.014" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
+    <testcase time="0.0129999999999999" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
+    <testcase time="0.012" classname="isAugmentedGrid" name="isAugmented_correctly_identifies_augmented_grids"/>
   </testsuite>
-  <testsuite name="isBasicGrid" timestamp="2024-10-31T15:05:18Z" hostname="64cfee7873d5" tests="9" skipped="0" failures="0" errors="0" time="0.048">
-    <testcase time="0.016" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
-    <testcase time="0.004" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
-    <testcase time="0.00299999999999989" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
-    <testcase time="0.004" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
-    <testcase time="0.004" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
-    <testcase time="0.004" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
-    <testcase time="0.00600000000000001" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
-    <testcase time="0.004" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
-    <testcase time="0.00300000000000011" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
+  <testsuite name="isBasicGrid" timestamp="2024-10-31T15:17:24Z" hostname="a49acd303004" tests="9" skipped="0" failures="0" errors="0" time="0.09">
+    <testcase time="0.024" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
+    <testcase time="0.0089999999999999" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
+    <testcase time="0.00700000000000012" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
+    <testcase time="0.00700000000000012" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
+    <testcase time="0.00800000000000001" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
+    <testcase time="0.0109999999999999" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
+    <testcase time="0.00800000000000001" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
+    <testcase time="0.00800000000000001" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
+    <testcase time="0.00800000000000001" classname="isBasicGrid" name="isBasicGrid_correctly_identifies_basic_grids"/>
   </testsuite>
-  <testsuite name="isManderGrid" timestamp="2024-10-31T15:05:18Z" hostname="64cfee7873d5" tests="10" skipped="0" failures="0" errors="0" time="0.067">
-    <testcase time="0.0190000000000001" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
-    <testcase time="0.00499999999999989" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
-    <testcase time="0.00500000000000012" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
-    <testcase time="0.00499999999999989" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
-    <testcase time="0.00499999999999989" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
-    <testcase time="0.00500000000000012" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
-    <testcase time="0.00499999999999989" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
-    <testcase time="0.00800000000000001" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
-    <testcase time="0.00500000000000012" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
-    <testcase time="0.00499999999999989" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
+  <testsuite name="isManderGrid" timestamp="2024-10-31T15:17:24Z" hostname="a49acd303004" tests="10" skipped="0" failures="0" errors="0" time="0.177">
+    <testcase time="0.0289999999999999" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
+    <testcase time="0.036" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
+    <testcase time="0.014" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
+    <testcase time="0.0130000000000001" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
+    <testcase time="0.014" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
+    <testcase time="0.014" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
+    <testcase time="0.0169999999999999" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
+    <testcase time="0.0130000000000001" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
+    <testcase time="0.0139999999999998" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
+    <testcase time="0.0130000000000001" classname="isManderGrid" name="isManderGrid_correctly_identifies_Mander_grids"/>
   </testsuite>
-  <testsuite name="obtainDesign" timestamp="2024-10-31T15:05:18Z" hostname="64cfee7873d5" tests="3" skipped="0" failures="0" errors="0" time="235.78">
-    <testcase time="10.603" classname="obtainDesign" name="obtainDesign_works"/>
-    <testcase time="42.828" classname="obtainDesign" name="obtainDesign_works"/>
-    <testcase time="182.349" classname="obtainDesign" name="obtainDesign_works"/>
+  <testsuite name="obtainDesign" timestamp="2024-10-31T15:17:24Z" hostname="a49acd303004" tests="3" skipped="0" failures="0" errors="0" time="244.241">
+    <testcase time="10.718" classname="obtainDesign" name="obtainDesign_works"/>
+    <testcase time="43.361" classname="obtainDesign" name="obtainDesign_works"/>
+    <testcase time="190.162" classname="obtainDesign" name="obtainDesign_works"/>
   </testsuite>
-  <testsuite name="powerPlot" timestamp="2024-10-31T15:09:13Z" hostname="64cfee7873d5" tests="2" skipped="0" failures="0" errors="0" time="0.41">
-    <testcase time="0.37299999999999" classname="powerPlot" name="multiplication_works"/>
-    <testcase time="0.0370000000000061" classname="powerPlot" name="multiplication_works"/>
+  <testsuite name="powerPlot" timestamp="2024-10-31T15:21:28Z" hostname="a49acd303004" tests="2" skipped="0" failures="0" errors="0" time="0.422">
+    <testcase time="0.38300000000001" classname="powerPlot" name="multiplication_works"/>
+    <testcase time="0.0389999999999873" classname="powerPlot" name="multiplication_works"/>
   </testsuite>
-  <testsuite name="searchBounds" timestamp="2024-10-31T15:09:14Z" hostname="64cfee7873d5" tests="1" skipped="0" failures="0" errors="0" time="0.01">
-    <testcase time="0.00999999999999091" classname="searchBounds" name="searchBounds_works"/>
+  <testsuite name="searchBounds" timestamp="2024-10-31T15:21:29Z" hostname="a49acd303004" tests="1" skipped="0" failures="0" errors="0" time="0.011">
+    <testcase time="0.0109999999999957" classname="searchBounds" name="searchBounds_works"/>
   </testsuite>
-  <testsuite name="validation" timestamp="2024-10-31T15:09:14Z" hostname="64cfee7873d5" tests="43" skipped="0" failures="0" errors="0" time="0.258">
+  <testsuite name="validation" timestamp="2024-10-31T15:21:29Z" hostname="a49acd303004" tests="43" skipped="0" failures="0" errors="0" time="0.274">
     <testcase time="0.0120000000000005" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.0040000000000191" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00799999999998136" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00500000000002387" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00399999999999068" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.0040000000000191" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00600000000000023" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00800000000000978" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.007000000000005" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00800000000000978" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.0109999999999957" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00399999999999068" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00900000000001455" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00799999999998136" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00500000000002387" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00699999999997658" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00399999999999068" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00500000000002387" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00800000000000978" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00899999999998613" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00800000000000978" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00800000000000978" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.0120000000000005" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00899999999998613" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00800000000000978" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00800000000000978" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="createGrid_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00800000000000978" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00900000000001455" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00500000000002387" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00799999999998136" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00500000000002387" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.007000000000005" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00399999999999068" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00399999999999068" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00500000000002387" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.007000000000005" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00499999999999545" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.00600000000000023" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
-    <testcase time="0.0109999999999957" classname="validation" name="powerPlot_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00999999999999091" classname="validation" name="obtainDesign_returns_appropriate_error_with_bad_input"/>
+    <testcase time="0.00900000000001455" classname="validation" name="powerPlot_returns_appropriate_error_with_bad_input"/>
     <testcase time="0.00600000000000023" classname="validation" name="powerPlot_returns_appropriate_error_with_bad_input"/>
   </testsuite>
 </testsuites>
