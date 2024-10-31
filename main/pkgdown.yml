@@ -1,9 +1,8 @@
-pandoc: 2.19.2
-pkgdown: 2.0.6
+pandoc: '3.4'
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-10-05T09:30Z
+last_built: 2024-10-31T15:04Z
 urls:
-  reference: https://openpharma.github.io/mtdesign/main/reference
-  article: https://openpharma.github.io/mtdesign/main/articles
-
+  reference: https://openpharma.github.io/mtdesign/reference
+  article: https://openpharma.github.io/mtdesign/articles
