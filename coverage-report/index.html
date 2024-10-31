@@ -107,8 +107,8 @@ table.table-condensed {
       </ul>
       <div class="tab-content" data-tabsetid="covr">
         <div class="tab-pane active" title="Files" data-value="Files" id="tab-covr-1">
-          <div class="datatables html-widget html-fill-item" id="htmlwidget-378d5ae3bd5b2ee07193" style="width:100%;height:500px;"></div>
-          <script type="application/json" data-for="htmlwidget-378d5ae3bd5b2ee07193">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["<a href=\"#\">R/functions.R<\/a>","<a href=\"#\">src/functions.cpp<\/a>"],[612,129],[330,86],[310,86],[20,0],["7","15808681"],["93.94%","100.00%"]],"container":"<table class=\"row-border\">\n  <thead>\n    <tr>\n      <th>File<\/th>\n      <th>Lines<\/th>\n      <th>Relevant<\/th>\n      <th>Covered<\/th>\n      <th>Missed<\/th>\n      <th>Hits / Line<\/th>\n      <th>Coverage<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"searching":false,"dom":"t","paging":false,"columnDefs":[{"targets":6,"createdCell":"function(td, cellData, rowData, row, col) {\n  var percent = cellData.replace(\"%\", \"\");\n  if (percent > 90) {\n    var grad = \"linear-gradient(90deg, #edfde7 \" + cellData + \", white \" + cellData + \")\";\n  } else if (percent > 75) {\n    var grad = \"linear-gradient(90deg, #f9ffe5 \" + cellData + \", white \" + cellData + \")\";\n  } else {\n    var grad = \"linear-gradient(90deg, #fcece9 \" + cellData + \", white \" + cellData + \")\";\n  }\n  $(td).css(\"background\", grad);\n}\n"},{"className":"dt-right","targets":[1,2,3,4]},{"name":"File","targets":0},{"name":"Lines","targets":1},{"name":"Relevant","targets":2},{"name":"Covered","targets":3},{"name":"Missed","targets":4},{"name":"Hits / Line","targets":5},{"name":"Coverage","targets":6}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\ntable.on('click.dt', 'a', function() {\n  files = $('div#files div');\n  files.not('div.hidden').addClass('hidden');\n  id = $(this).text();\n  files.filter('div[id=\\'' + id + '\\']').removeClass('hidden');\n  $('ul.nav a[data-value=Source]').text(id).tab('show');\n});\n}"},"evals":["options.columnDefs.0.createdCell","callback"],"jsHooks":[]}</script>
+          <div class="datatables html-widget html-fill-item" id="htmlwidget-1721d1319c3ef6acb692" style="width:100%;height:500px;"></div>
+          <script type="application/json" data-for="htmlwidget-1721d1319c3ef6acb692">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["<a href=\"#\">R/functions.R<\/a>","<a href=\"#\">src/functions.cpp<\/a>"],[614,129],[330,86],[310,86],[20,0],["7","15808681"],["93.94%","100.00%"]],"container":"<table class=\"row-border\">\n  <thead>\n    <tr>\n      <th>File<\/th>\n      <th>Lines<\/th>\n      <th>Relevant<\/th>\n      <th>Covered<\/th>\n      <th>Missed<\/th>\n      <th>Hits / Line<\/th>\n      <th>Coverage<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"searching":false,"dom":"t","paging":false,"columnDefs":[{"targets":6,"createdCell":"function(td, cellData, rowData, row, col) {\n  var percent = cellData.replace(\"%\", \"\");\n  if (percent > 90) {\n    var grad = \"linear-gradient(90deg, #edfde7 \" + cellData + \", white \" + cellData + \")\";\n  } else if (percent > 75) {\n    var grad = \"linear-gradient(90deg, #f9ffe5 \" + cellData + \", white \" + cellData + \")\";\n  } else {\n    var grad = \"linear-gradient(90deg, #fcece9 \" + cellData + \", white \" + cellData + \")\";\n  }\n  $(td).css(\"background\", grad);\n}\n"},{"className":"dt-right","targets":[1,2,3,4]},{"name":"File","targets":0},{"name":"Lines","targets":1},{"name":"Relevant","targets":2},{"name":"Covered","targets":3},{"name":"Missed","targets":4},{"name":"Hits / Line","targets":5},{"name":"Coverage","targets":6}],"order":[],"autoWidth":false,"orderClasses":false},"callback":"function(table) {\ntable.on('click.dt', 'a', function() {\n  files = $('div#files div');\n  files.not('div.hidden').addClass('hidden');\n  id = $(this).text();\n  files.filter('div[id=\\'' + id + '\\']').removeClass('hidden');\n  $('ul.nav a[data-value=Source]').text(id).tab('show');\n});\n}"},"evals":["options.columnDefs.0.createdCell","callback"],"jsHooks":[]}</script>
         </div>
         <div class="tab-pane" title="Source" data-value="Source" id="tab-covr-2">
           <div id="files">
@@ -1571,18 +1571,18 @@ table.table-condensed {
                       <pre class="language-r">  futile.logger::flog.debug("Entry")</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
-                    <td class="num">209</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">  if (twoSided) alpha &lt;- alpha / 2</pre>
-                    </td>
-                  </tr>
                   <tr class="never">
-                    <td class="num">210</td>
+                    <td class="num">209</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r"></pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">210</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">  if (twoSided) alpha &lt;- alpha / 2</pre>
                     </td>
                   </tr>
                   <tr class="never">
@@ -1606,2794 +1606,2808 @@ table.table-condensed {
                       <pre class="language-r">  # John Wiley &amp; Sons, New York</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
+                  <tr class="never">
                     <td class="num">214</td>
-                    <td class="coverage">17<em>x</em></td>
+                    <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  n &lt;- ((stats::qnorm(1 - alpha) * sqrt(p0 * (1 - p0)) +</pre>
+                      <pre class="language-r">  #nolint start</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">215</td>
                     <td class="coverage">17<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    stats::qnorm(1 - beta) * sqrt(p1 * (1 - p1))) /</pre>
+                      <pre class="language-r">  n &lt;- ((stats::qnorm(1 - alpha) * sqrt(p0 * (1 - p0)) +</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">216</td>
                     <td class="coverage">17<em>x</em></td>
                     <td class="col-sm-12">
+                      <pre class="language-r">    stats::qnorm(1 - beta) * sqrt(p1 * (1 - p1))) /</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">217</td>
+                    <td class="coverage">17<em>x</em></td>
+                    <td class="col-sm-12">
                       <pre class="language-r">    (p0 - p1))^2</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">217</td>
+                    <td class="num">218</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  # Continuity correction from Fleiss et al</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">218</td>
-                    <td class="coverage">17<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">  n &lt;- n + 1 / abs(p0 - p1)</pre>
+                      <pre class="language-r">  #nolint end</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">219</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  # Bounds based on ????</pre>
+                      <pre class="language-r">  # Continuity correction from Fleiss et al</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">220</td>
                     <td class="coverage">17<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  rv &lt;- c("n" = ceiling(n), "min" = floor(n * 0.8), "max" = ceiling(n * 2))</pre>
+                      <pre class="language-r">  n &lt;- n + 1 / abs(p0 - p1)</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
+                  <tr class="never">
                     <td class="num">221</td>
-                    <td class="coverage">17<em>x</em></td>
+                    <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  futile.logger::flog.debug("Exit")</pre>
+                      <pre class="language-r">  # Bounds based on ????</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">222</td>
                     <td class="coverage">17<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  return(rv)</pre>
+                      <pre class="language-r">  rv &lt;- c("n" = ceiling(n), "min" = floor(n * 0.8), "max" = ceiling(n * 2))</pre>
                     </td>
                   </tr>
-                  <tr class="never">
+                  <tr class="covered">
                     <td class="num">223</td>
-                    <td class="coverage"></td>
+                    <td class="coverage">17<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">}</pre>
+                      <pre class="language-r">  futile.logger::flog.debug("Exit")</pre>
                     </td>
                   </tr>
-                  <tr class="never">
+                  <tr class="covered">
                     <td class="num">224</td>
-                    <td class="coverage"></td>
+                    <td class="coverage">17<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r"></pre>
+                      <pre class="language-r">  return(rv)</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">225</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' Augment a grid of candidate designs with type 1 and type 2 error</pre>
+                      <pre class="language-r">}</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">226</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' probabilities, expected sample sizes and probabilities of early termination</pre>
+                      <pre class="language-r"></pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">227</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param d a tibble created by `createGrid`</pre>
+                      <pre class="language-r">#' Augment a grid of candidate designs with type 1 and type 2 error</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">228</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param parallel use parallelisation if available</pre>
+                      <pre class="language-r">#' probabilities, expected sample sizes and probabilities of early termination</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">229</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param cores the number of cores to use when parallelising.  If</pre>
+                      <pre class="language-r">#' @param d a tibble created by `createGrid`</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">230</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' &lt;code&gt;NA&lt;/code&gt;, all available cores are requested</pre>
+                      <pre class="language-r">#' @param parallel use parallelisation if available</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">231</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param minChunkSize  The minimum size of the grid before paralellisation is</pre>
+                      <pre class="language-r">#' @param cores the number of cores to use when parallelising.  If</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">232</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' attempted</pre>
+                      <pre class="language-r">#' &lt;code&gt;NA&lt;/code&gt;, all available cores are requested</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">233</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @return an augmented grid tibble</pre>
+                      <pre class="language-r">#' @param minChunkSize  The minimum size of the grid before paralellisation is</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">234</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @section Usage Notes:</pre>
+                      <pre class="language-r">#' attempted</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">235</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' Regardless of the value of `parallel`, parallelisation is only</pre>
+                      <pre class="language-r">#' @return an augmented grid tibble</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">236</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' used if the size of the grid is greater than &lt;code&gt;chunkSize&lt;/code&gt;.  If</pre>
+                      <pre class="language-r">#' @section Usage Notes:</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">237</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' paralellisation is requested and needed, an exception is thrown if the</pre>
+                      <pre class="language-r">#' Regardless of the value of `parallel`, parallelisation is only</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">238</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' parallel package is not available.</pre>
+                      <pre class="language-r">#' used if the size of the grid is greater than &lt;code&gt;chunkSize&lt;/code&gt;.  If</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">239</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @examples</pre>
+                      <pre class="language-r">#' paralellisation is requested and needed, an exception is thrown if the</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">240</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' x &lt;- createGrid(p0 = 0.1, p1 = 0.30, alpha = 0.1, beta = 0.1, nMin = 24, nMax = 32) %&gt;%</pre>
+                      <pre class="language-r">#' parallel package is not available.</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">241</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'   augmentGrid(parallel = FALSE)</pre>
+                      <pre class="language-r">#' @examples</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">242</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @export</pre>
+                      <pre class="language-r">#' x &lt;- createGrid(p0 = 0.1, p1 = 0.30, alpha = 0.1, beta = 0.1, nMin = 24, nMax = 32) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">243</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">augmentGrid &lt;- function(d, parallel = TRUE, cores = NA, minChunkSize = 100000) {</pre>
+                      <pre class="language-r">#'   augmentGrid(parallel = FALSE)</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
+                  <tr class="never">
                     <td class="num">244</td>
-                    <td class="coverage">8<em>x</em></td>
+                    <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  futile.logger::flog.debug("Entry")</pre>
+                      <pre class="language-r">#' @export</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
+                  <tr class="never">
                     <td class="num">245</td>
-                    <td class="coverage">8<em>x</em></td>
+                    <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  k &lt;- d %&gt;% nrow()</pre>
+                      <pre class="language-r">augmentGrid &lt;- function(d, parallel = TRUE, cores = NA, minChunkSize = 100000) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">246</td>
                     <td class="coverage">8<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  if (parallel) {</pre>
+                      <pre class="language-r">  futile.logger::flog.debug("Entry")</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">247</td>
+                    <td class="coverage">8<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">  k &lt;- d %&gt;% nrow()</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">248</td>
+                    <td class="coverage">8<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">  if (parallel) {</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">249</td>
                     <td class="coverage">3<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (k &lt; minChunkSize) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">248</td>
-                    <td class="coverage">2<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      futile.logger::flog.info(</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">249</td>
-                    <td class="coverage">2<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        paste0(</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
                     <td class="num">250</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          "Parallelisation has been requested, but the grid size [", k,</pre>
+                      <pre class="language-r">      futile.logger::flog.info(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">251</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          "] is less than the minimum chunk size [", minChunkSize,</pre>
+                      <pre class="language-r">        paste0(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">252</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          "].  Parallelisation will not occur"</pre>
+                      <pre class="language-r">          "Parallelisation has been requested, but the grid size [", k,</pre>
                     </td>
                   </tr>
-                  <tr class="never">
+                  <tr class="covered">
                     <td class="num">253</td>
-                    <td class="coverage"></td>
+                    <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        ),</pre>
+                      <pre class="language-r">          "] is less than the minimum chunk size [", minChunkSize,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">254</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        namespace = "mtdesign"</pre>
+                      <pre class="language-r">          "].  Parallelisation will not occur"</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">255</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      )</pre>
+                      <pre class="language-r">        ),</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">256</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      parallel &lt;- FALSE</pre>
+                      <pre class="language-r">        namespace = "mtdesign"</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">257</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
+                      <pre class="language-r">      )</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">258</td>
+                    <td class="coverage">2<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      parallel &lt;- FALSE</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">259</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
                       <pre class="language-r">    }</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">258</td>
+                    <td class="num">260</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  }</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">259</td>
+                    <td class="num">261</td>
                     <td class="coverage">8<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  if (parallel) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">260</td>
+                    <td class="num">262</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (!requireNamespace("parallel", quietly = TRUE)) {</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">261</td>
+                    <td class="num">263</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">      stop("Parallelisation has been requested but the parallel package is not available.  Unable to continue.")</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">262</td>
+                    <td class="num">264</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    }</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">263</td>
+                    <td class="num">265</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (is.na(cores)) {</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">264</td>
+                    <td class="num">266</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">      cores &lt;- parallel::detectCores()</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">265</td>
+                    <td class="num">267</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    }</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">266</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">    futile.logger::flog.trace("Starting parallelisation")</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">267</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">    futile.logger::flog.trace(paste0("Requesting ", cores, " cores"))</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">268</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    futile.logger::flog.trace(paste0("k is ", k))</pre>
+                      <pre class="language-r">    futile.logger::flog.trace("Starting parallelisation")</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">269</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    chunkSize &lt;- ceiling(k / cores)</pre>
+                      <pre class="language-r">    futile.logger::flog.trace(paste0("Requesting ", cores, " cores"))</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">270</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    futile.logger::flog.trace(paste0("Creating chunk list.  Chunk size is ", chunkSize))</pre>
+                      <pre class="language-r">    futile.logger::flog.trace(paste0("k is ", k))</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">271</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    tmp &lt;- d %&gt;% dplyr::mutate(Chunk = ceiling(dplyr::row_number() / chunkSize))</pre>
+                      <pre class="language-r">    chunkSize &lt;- ceiling(k / cores)</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">272</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    parallelList &lt;- tmp %&gt;%</pre>
+                      <pre class="language-r">    futile.logger::flog.trace(paste0("Creating chunk list.  Chunk size is ", chunkSize))</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">273</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::group_by(Chunk) %&gt;%</pre>
+                      <pre class="language-r">    tmp &lt;- d %&gt;% dplyr::mutate(Chunk = ceiling(dplyr::row_number() / chunkSize))</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">274</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::group_map(function(.x, .y) .x)</pre>
+                      <pre class="language-r">    parallelList &lt;- tmp %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">275</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    futile.logger::flog.trace("Creating cluster")</pre>
+                      <pre class="language-r">      dplyr::group_by(Chunk) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">276</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    cluster &lt;- parallel::makeCluster(cores)</pre>
+                      <pre class="language-r">      dplyr::group_map(function(.x, .y) .x)</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">277</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    futile.logger::flog.trace("Initialising nodes")</pre>
+                      <pre class="language-r">    futile.logger::flog.trace("Creating cluster")</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">278</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
+                      <pre class="language-r">    cluster &lt;- parallel::makeCluster(cores)</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">279</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">    futile.logger::flog.trace("Initialising nodes")</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">280</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
                       <pre class="language-r">    parallel::clusterEvalQ(cluster, {</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">279</td>
+                    <td class="num">281</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">      library(parallel)</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">280</td>
+                    <td class="num">282</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    })</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">281</td>
+                    <td class="num">283</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    futile.logger::flog.trace("Running parLapply")</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">282</td>
+                    <td class="num">284</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    d &lt;- parallel::parLapply(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">283</td>
+                    <td class="num">285</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      cluster,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">284</td>
+                    <td class="num">286</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      parallelList,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">285</td>
+                    <td class="num">287</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      augmentGrid,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">286</td>
+                    <td class="num">288</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      parallel = FALSE</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">287</td>
+                    <td class="num">289</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    ) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">288</td>
+                    <td class="num">290</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      dplyr::bind_rows()</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">289</td>
+                    <td class="num">291</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    futile.logger::flog.trace("Stopping cluster")</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">290</td>
+                    <td class="num">292</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    suppressWarnings(parallel::stopCluster(cluster))</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">291</td>
+                    <td class="num">293</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  } else {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">292</td>
+                    <td class="num">294</td>
                     <td class="coverage">7<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (k &gt;= 1e6) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">293</td>
+                    <td class="num">295</td>
                     <td class="coverage">3<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      futile.logger::flog.info(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">294</td>
+                    <td class="num">296</td>
                     <td class="coverage">3<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        paste0(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">295</td>
+                    <td class="num">297</td>
                     <td class="coverage">3<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          "The grid contains ",</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">296</td>
+                    <td class="num">298</td>
                     <td class="coverage">3<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          k,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">297</td>
+                    <td class="num">299</td>
                     <td class="coverage">3<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          " rows.  This may take some time..."</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">298</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        )</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
-                    <td class="num">299</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      )</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
                     <td class="num">300</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    }</pre>
+                      <pre class="language-r">        )</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">301</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    # The return type of a data frame from Rcpp is unreliable, so wrap it here</pre>
+                      <pre class="language-r">      )</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">302</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    # to make sure all is good</pre>
+                      <pre class="language-r">    }</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
+                  <tr class="never">
                     <td class="num">303</td>
-                    <td class="coverage">7<em>x</em></td>
+                    <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    cls &lt;- class(d)</pre>
+                      <pre class="language-r">    # The return type of a data frame from Rcpp is unreliable, so wrap it here</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
+                  <tr class="never">
                     <td class="num">304</td>
-                    <td class="coverage">7<em>x</em></td>
+                    <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    d &lt;- tibble::as_tibble(augmentGridC(d))</pre>
+                      <pre class="language-r">    # to make sure all is good</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">305</td>
                     <td class="coverage">7<em>x</em></td>
                     <td class="col-sm-12">
+                      <pre class="language-r">    cls &lt;- class(d)</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">306</td>
+                    <td class="coverage">7<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">    d &lt;- tibble::as_tibble(augmentGridC(d))</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">307</td>
+                    <td class="coverage">7<em>x</em></td>
+                    <td class="col-sm-12">
                       <pre class="language-r">    class(d) &lt;- cls</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">306</td>
+                    <td class="num">308</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  }</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">307</td>
+                    <td class="num">309</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  # Bug fix</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">308</td>
+                    <td class="num">310</td>
                     <td class="coverage">8<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  if (isManderGrid(d)) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">309</td>
+                    <td class="num">311</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    d &lt;- d %&gt;% dplyr::mutate(rSuccess = as.integer(rSuccess))</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">310</td>
+                    <td class="num">312</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  }</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">311</td>
+                    <td class="num">313</td>
                     <td class="coverage">8<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  futile.logger::flog.debug("Exit")</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">312</td>
+                    <td class="num">314</td>
                     <td class="coverage">8<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  return(d)</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">313</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">}</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
-                    <td class="num">314</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r"></pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
                     <td class="num">315</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r"></pre>
+                      <pre class="language-r">}</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">316</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' Finds optimal and minimax designs for either Simon's 2-stage or Mander &amp;</pre>
+                      <pre class="language-r"></pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">317</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' Thompson studies</pre>
+                      <pre class="language-r"></pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">318</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'</pre>
+                      <pre class="language-r">#' Finds optimal and minimax designs for either Simon's 2-stage or Mander &amp;</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">319</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' \code{obtainDesign} is essentially a wrapper for calls to</pre>
+                      <pre class="language-r">#' Thompson studies</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">320</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' \code{\link{createGrid}} and \code{\link{augmentGrid}} followed by some</pre>
+                      <pre class="language-r">#'</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">321</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' simple filtering of the candidate designs to identify the optimal and</pre>
+                      <pre class="language-r">#' \code{obtainDesign} is essentially a wrapper for calls to</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">322</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' minimax designs.</pre>
+                      <pre class="language-r">#' \code{\link{createGrid}} and \code{\link{augmentGrid}} followed by some</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">323</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'</pre>
+                      <pre class="language-r">#' simple filtering of the candidate designs to identify the optimal and</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">324</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param grid Optional. A tibble created by \code{createGrid}.  If \code{NULL},</pre>
+                      <pre class="language-r">#' minimax designs.</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">325</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  then \code{p0}, \code{p1}, \code{alpha} and \code{beta} must be specified</pre>
+                      <pre class="language-r">#'</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">326</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  and \code{createGrid} is called to generate the required grid.  If not</pre>
+                      <pre class="language-r">#' @param grid Optional. A tibble created by \code{createGrid}.  If \code{NULL},</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">327</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  \code{NULL} then \code{p0}, \code{p1}, \code{alpha} and \code{beta} are</pre>
+                      <pre class="language-r">#'  then \code{p0}, \code{p1}, \code{alpha} and \code{beta} must be specified</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">328</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  ignored</pre>
+                      <pre class="language-r">#'  and \code{createGrid} is called to generate the required grid.  If not</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">329</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param p0 the response rate under the null hypothesis</pre>
+                      <pre class="language-r">#'  \code{NULL} then \code{p0}, \code{p1}, \code{alpha} and \code{beta} are</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">330</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param p1 the response rate under the alternate hypothesis</pre>
+                      <pre class="language-r">#'  ignored</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">331</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param alpha the desired (one-sided) type 1 error rate</pre>
+                      <pre class="language-r">#' @param p0 the response rate under the null hypothesis</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">332</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param beta the desired type 2 error rate</pre>
+                      <pre class="language-r">#' @param p1 the response rate under the alternate hypothesis</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">333</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param fullGrid should the full grid of all possible designs be returned, or</pre>
+                      <pre class="language-r">#' @param alpha the desired (one-sided) type 1 error rate</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">334</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  simply the optimal and minimax solutions?  For a Mander and Thompson design,</pre>
+                      <pre class="language-r">#' @param beta the desired type 2 error rate</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">335</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  optimal and minimax designs are returned for both the null and alternate</pre>
+                      <pre class="language-r">#' @param fullGrid should the full grid of all possible designs be returned, or</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">336</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  hypotheses.  See Usage Notes below.</pre>
+                      <pre class="language-r">#'  simply the optimal and minimax solutions?  For a Mander and Thompson design,</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">337</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param ... passed to `createGrid` or `augmentGrid`.  In particular</pre>
+                      <pre class="language-r">#'  optimal and minimax designs are returned for both the null and alternate</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">338</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  \code{mander=TRUE} for a Mander &amp; Thompson design or \code{mander=FALSE} for</pre>
+                      <pre class="language-r">#'  hypotheses.  See Usage Notes below.</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">339</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  a Simon's 2-stage design.</pre>
+                      <pre class="language-r">#' @param ... passed to `createGrid` or `augmentGrid`.  In particular</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">340</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @return a tibble created by \code{\link{createGrid}}.  If</pre>
+                      <pre class="language-r">#'  \code{mander=TRUE} for a Mander &amp; Thompson design or \code{mander=FALSE} for</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">341</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  \code{fullGrid == FALSE} the table contains an additional column,</pre>
+                      <pre class="language-r">#'  a Simon's 2-stage design.</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">342</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  \code{Criterion} indicating the type of design.  Possible values for</pre>
+                      <pre class="language-r">#' @return a tibble created by \code{\link{createGrid}}.  If</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">343</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  \code{Criterion} are "optimal" and "minimax" for Simon's designs and</pre>
+                      <pre class="language-r">#'  \code{fullGrid == FALSE} the table contains an additional column,</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">344</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  "optimalNull", "optimalAlt", "minimaxNull" and "minimaxAlt" for Mander &amp;</pre>
+                      <pre class="language-r">#'  \code{Criterion} indicating the type of design.  Possible values for</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">345</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  Thompson designs.</pre>
+                      <pre class="language-r">#'  \code{Criterion} are "optimal" and "minimax" for Simon's designs and</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">346</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @section Usage notes:</pre>
+                      <pre class="language-r">#'  "optimalNull", "optimalAlt", "minimaxNull" and "minimaxAlt" for Mander &amp;</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">347</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' If \code{grid} is not \code{NULL} it is possible that none of the candidate</pre>
+                      <pre class="language-r">#'  Thompson designs.</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">348</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' designs are acceptable (that is, satisfy both the significance level and</pre>
+                      <pre class="language-r">#' @section Usage notes:</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">349</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' power requirements).  If this is the case and \code{fullGrid == FALSE}, then</pre>
+                      <pre class="language-r">#' If \code{grid} is not \code{NULL} it is possible that none of the candidate</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">350</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' an empty tibble is returned.  If \code{versbose == TRUE} a warning message is</pre>
+                      <pre class="language-r">#' designs are acceptable (that is, satisfy both the significance level and</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">351</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  also printed.</pre>
+                      <pre class="language-r">#' power requirements).  If this is the case and \code{fullGrid == FALSE}, then</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">352</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' If \code{fullGrid == TRUE} the full grid of all designs considered is</pre>
+                      <pre class="language-r">#' an empty tibble is returned.  If \code{versbose == TRUE} a warning message is</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">353</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' returned.  This can then be further interrogated to find optimal designs</pre>
+                      <pre class="language-r">#'  also printed.</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">354</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  under constraints - for example with fixed stage sizes.</pre>
+                      <pre class="language-r">#' If \code{fullGrid == TRUE} the full grid of all designs considered is</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">355</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @examples</pre>
+                      <pre class="language-r">#' returned.  This can then be further interrogated to find optimal designs</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">356</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' \donttest{</pre>
+                      <pre class="language-r">#'  under constraints - for example with fixed stage sizes.</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">357</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' # Standard use (Simon's 2-stage design)</pre>
+                      <pre class="language-r">#' @examples</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">358</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE) %&gt;%</pre>
+                      <pre class="language-r">#' \donttest{</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">359</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'   augmentGrid(parallel = FALSE) %&gt;%</pre>
+                      <pre class="language-r">#' # Standard use (Simon's 2-stage design)</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">360</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'   obtainDesign()</pre>
+                      <pre class="language-r">#' createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">361</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' # Constrained stage sizes</pre>
+                      <pre class="language-r">#'   augmentGrid(parallel = FALSE) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">362</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' createGrid(p0 = 0.25, p1 = 0.45, alpha = 0.05, beta = 0.2) %&gt;%</pre>
+                      <pre class="language-r">#'   obtainDesign()</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">363</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'   dplyr::filter(nStage1 == 8) %&gt;%</pre>
+                      <pre class="language-r">#' # Constrained stage sizes</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">364</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'   augmentGrid(parallel = FALSE) %&gt;%</pre>
+                      <pre class="language-r">#' createGrid(p0 = 0.25, p1 = 0.45, alpha = 0.05, beta = 0.2) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">365</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'   obtainDesign()</pre>
+                      <pre class="language-r">#'   dplyr::filter(nStage1 == 8) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">366</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' }</pre>
+                      <pre class="language-r">#'   augmentGrid(parallel = FALSE) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">367</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @export</pre>
+                      <pre class="language-r">#'   obtainDesign()</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">368</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">obtainDesign &lt;- function(grid = NULL,</pre>
+                      <pre class="language-r">#' }</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">369</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">                         p0 = NA,</pre>
+                      <pre class="language-r">#' @export</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">370</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">                         p1 = NA,</pre>
+                      <pre class="language-r">obtainDesign &lt;- function(grid = NULL,</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">371</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">                         alpha = ifelse(is.null(grid), 0.05, NA),</pre>
+                      <pre class="language-r">                         p0 = NA,</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">372</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">                         beta = ifelse(is.null(grid), 0.1, NA),</pre>
+                      <pre class="language-r">                         p1 = NA,</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">373</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">                         fullGrid = FALSE,</pre>
+                      <pre class="language-r">                         alpha = ifelse(is.null(grid), 0.05, NA),</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">374</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">                         ...) {</pre>
+                      <pre class="language-r">                         beta = ifelse(is.null(grid), 0.1, NA),</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
+                  <tr class="never">
                     <td class="num">375</td>
-                    <td class="coverage">22<em>x</em></td>
+                    <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  futile.logger::flog.debug("Entry")</pre>
+                      <pre class="language-r">                         fullGrid = FALSE,</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">376</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  # Initialise</pre>
+                      <pre class="language-r">                         ...) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">377</td>
                     <td class="coverage">22<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  dots &lt;- list(...)</pre>
+                      <pre class="language-r">  futile.logger::flog.debug("Entry")</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">378</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  # Validate</pre>
+                      <pre class="language-r">  # Initialise</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">379</td>
                     <td class="coverage">22<em>x</em></td>
                     <td class="col-sm-12">
+                      <pre class="language-r">  dots &lt;- list(...)</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">380</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">  # Validate</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">381</td>
+                    <td class="coverage">22<em>x</em></td>
+                    <td class="col-sm-12">
                       <pre class="language-r">  if (is.null(grid)) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">380</td>
+                    <td class="num">382</td>
                     <td class="coverage">21<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (is.na(p0) | is.na(p1) | is.na(alpha) | is.na(beta)) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">381</td>
+                    <td class="num">383</td>
                     <td class="coverage">4<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      stop("If you do not supply a grid, then you must supply all of p0, p1, alpha and beta.")</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">382</td>
+                    <td class="num">384</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    }</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">383</td>
+                    <td class="num">385</td>
                     <td class="coverage">4<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (p0 &lt;= 0 | p0 &gt;= 1) stop("p0 must be between 0 and 1")</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">384</td>
+                    <td class="num">386</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (p1 &lt;= 0 | p1 &gt;= 1) stop("p1 must be between 0 and 1")</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">385</td>
+                    <td class="num">387</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (alpha &lt;= 0 | alpha &gt;= 1) stop("alpha must be between 0 and 1")</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">386</td>
+                    <td class="num">388</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (beta &lt;= 0 | beta &gt;= 1) stop("beta must be between 0 and 1")</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">387</td>
+                    <td class="num">389</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  } else {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">388</td>
+                    <td class="num">390</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (!(grid %&gt;% isBasicGrid())) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">389</td>
+                    <td class="num">391</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      stop("Grid must be a tibble created by createGrid()")</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">390</td>
+                    <td class="num">392</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    }</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">391</td>
+                    <td class="num">393</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (!is.na(p0)) {</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">392</td>
+                    <td class="num">394</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">      futile.logger::flog.warn("A valid grid has been supplied.  Ignoring p0...")</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">393</td>
+                    <td class="num">395</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    }</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">394</td>
+                    <td class="num">396</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (!is.na(p1)) {</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">395</td>
+                    <td class="num">397</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">      futile.logger::flog.warn("A valid grid has been supplied.  Ignoring p1...")</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">396</td>
+                    <td class="num">398</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    }</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">397</td>
+                    <td class="num">399</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (!is.na(alpha)) {</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">398</td>
+                    <td class="num">400</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">      futile.logger::flog.warn("A valid grid has been supplied.  Ignoring alpha...")</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">399</td>
+                    <td class="num">401</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    }</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">400</td>
+                    <td class="num">402</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (!is.na(beta)) {</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">401</td>
+                    <td class="num">403</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">      futile.logger::flog.warn("A valid grid has been supplied.  Ignoring beta...")</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">402</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">    }</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
-                    <td class="num">403</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">  }</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
                     <td class="num">404</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r"></pre>
+                      <pre class="language-r">    }</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">405</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  # Begin</pre>
+                      <pre class="language-r">  }</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">406</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  # Calls to do.call are required to separate the dot list appropriately</pre>
+                      <pre class="language-r"></pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">407</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  # Function name as string as workaround for https://github.com/daroczig/logger/issues/114</pre>
+                      <pre class="language-r">  # Begin</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
+                  <tr class="never">
                     <td class="num">408</td>
-                    <td class="coverage">5<em>x</em></td>
+                    <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  if (is.null(grid)) {</pre>
+                      <pre class="language-r">  # Calls to do.call are required to separate the dot list appropriately</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
+                  <tr class="never">
                     <td class="num">409</td>
-                    <td class="coverage">5<em>x</em></td>
+                    <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    grid &lt;-</pre>
+                      <pre class="language-r">  # Function name as string as workaround for https://github.com/daroczig/logger/issues/114</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">410</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      do.call(</pre>
+                      <pre class="language-r">  if (is.null(grid)) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">411</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        "createGrid",</pre>
+                      <pre class="language-r">    grid &lt;-</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">412</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        c(</pre>
+                      <pre class="language-r">      do.call(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">413</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          list(p0 = p0, p1 = p1, alpha = alpha, beta = beta),</pre>
+                      <pre class="language-r">        "createGrid",</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">414</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          dots[names(dots) %in% names(formals(mtdesign::createGrid))]</pre>
+                      <pre class="language-r">        c(</pre>
                     </td>
                   </tr>
-                  <tr class="never">
+                  <tr class="covered">
                     <td class="num">415</td>
-                    <td class="coverage"></td>
+                    <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        )</pre>
+                      <pre class="language-r">          list(p0 = p0, p1 = p1, alpha = alpha, beta = beta),</pre>
                     </td>
                   </tr>
-                  <tr class="never">
+                  <tr class="covered">
                     <td class="num">416</td>
-                    <td class="coverage"></td>
+                    <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      )</pre>
+                      <pre class="language-r">          dots[names(dots) %in% names(formals(mtdesign::createGrid))]</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">417</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  }</pre>
+                      <pre class="language-r">        )</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
+                  <tr class="never">
                     <td class="num">418</td>
-                    <td class="coverage">5<em>x</em></td>
+                    <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  if (!(grid %&gt;% isAugmented())) {</pre>
+                      <pre class="language-r">      )</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
+                  <tr class="never">
                     <td class="num">419</td>
-                    <td class="coverage">5<em>x</em></td>
+                    <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    grid &lt;-</pre>
+                      <pre class="language-r">  }</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">420</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      do.call(</pre>
+                      <pre class="language-r">  if (!(grid %&gt;% isAugmented())) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">421</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        "augmentGrid",</pre>
+                      <pre class="language-r">    grid &lt;-</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">422</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        c(</pre>
+                      <pre class="language-r">      do.call(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">423</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          list(d = grid),</pre>
+                      <pre class="language-r">        "augmentGrid",</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">424</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          dots[names(dots) %in% names(formals(mtdesign::augmentGrid))]</pre>
+                      <pre class="language-r">        c(</pre>
                     </td>
                   </tr>
-                  <tr class="never">
+                  <tr class="covered">
                     <td class="num">425</td>
-                    <td class="coverage"></td>
+                    <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        )</pre>
+                      <pre class="language-r">          list(d = grid),</pre>
                     </td>
                   </tr>
-                  <tr class="never">
+                  <tr class="covered">
                     <td class="num">426</td>
-                    <td class="coverage"></td>
+                    <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      )</pre>
+                      <pre class="language-r">          dots[names(dots) %in% names(formals(mtdesign::augmentGrid))]</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">427</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
+                      <pre class="language-r">        )</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">428</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      )</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">429</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
                       <pre class="language-r">  }</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">428</td>
+                    <td class="num">430</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  if (fullGrid) {</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">429</td>
+                    <td class="num">431</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">    return(grid)</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">430</td>
+                    <td class="num">432</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  } else {</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">431</td>
-                    <td class="coverage">5<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">    acceptableGrid &lt;- grid %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">432</td>
-                    <td class="coverage">5<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::filter(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">433</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        Type1 &lt;= Alpha,</pre>
+                      <pre class="language-r">    acceptableGrid &lt;- grid %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">434</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        Type2 &lt;= Beta</pre>
+                      <pre class="language-r">      dplyr::filter(</pre>
                     </td>
                   </tr>
-                  <tr class="never">
+                  <tr class="covered">
                     <td class="num">435</td>
-                    <td class="coverage"></td>
+                    <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      )</pre>
+                      <pre class="language-r">        Type1 &lt;= Alpha,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">436</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
+                      <pre class="language-r">        Type2 &lt;= Beta</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">437</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      )</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">438</td>
+                    <td class="coverage">5<em>x</em></td>
+                    <td class="col-sm-12">
                       <pre class="language-r">    if (nrow(acceptableGrid) == 0) {</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">437</td>
+                    <td class="num">439</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">      rlang::warn("No acceptable designs were found.")</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">438</td>
+                    <td class="num">440</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">      futile.logger::flog.warn("No acceptable designs were found.")</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">439</td>
+                    <td class="num">441</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    }</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">440</td>
+                    <td class="num">442</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r"></pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">441</td>
-                    <td class="coverage">5<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">    rv &lt;- vector("list", 4)</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">442</td>
-                    <td class="coverage">5<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">    rv[[1]] &lt;- acceptableGrid %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">443</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::slice(which.min(AveSizeNull)) %&gt;%</pre>
+                      <pre class="language-r">    rv &lt;- vector("list", 4)</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">444</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::mutate(</pre>
+                      <pre class="language-r">    rv[[1]] &lt;- acceptableGrid %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">445</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        Criterion = ifelse(</pre>
+                      <pre class="language-r">      dplyr::slice(which.min(AveSizeNull)) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">446</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          acceptableGrid %&gt;% isManderGrid(),</pre>
+                      <pre class="language-r">      dplyr::mutate(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">447</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          "optimalNull",</pre>
+                      <pre class="language-r">        Criterion = ifelse(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">448</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
+                      <pre class="language-r">          acceptableGrid %&gt;% isManderGrid(),</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">449</td>
+                    <td class="coverage">5<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          "optimalNull",</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">450</td>
+                    <td class="coverage">5<em>x</em></td>
+                    <td class="col-sm-12">
                       <pre class="language-r">          "optimal"</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">449</td>
+                    <td class="num">451</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        )</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">450</td>
+                    <td class="num">452</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      )</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">451</td>
-                    <td class="coverage">5<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">    rv[[2]] &lt;- acceptableGrid %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">452</td>
-                    <td class="coverage">5<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::slice_min(nTotal) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">453</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::slice_min(AveSizeNull) %&gt;%</pre>
+                      <pre class="language-r">    rv[[2]] &lt;- acceptableGrid %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">454</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::mutate(</pre>
+                      <pre class="language-r">      dplyr::slice_min(nTotal) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">455</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        Criterion = ifelse(</pre>
+                      <pre class="language-r">      dplyr::slice_min(AveSizeNull) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">456</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          acceptableGrid %&gt;% isManderGrid(),</pre>
+                      <pre class="language-r">      dplyr::mutate(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">457</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          "minimaxNull",</pre>
+                      <pre class="language-r">        Criterion = ifelse(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">458</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
+                      <pre class="language-r">          acceptableGrid %&gt;% isManderGrid(),</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">459</td>
+                    <td class="coverage">5<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          "minimaxNull",</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">460</td>
+                    <td class="coverage">5<em>x</em></td>
+                    <td class="col-sm-12">
                       <pre class="language-r">          "minimax"</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">459</td>
+                    <td class="num">461</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        )</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">460</td>
+                    <td class="num">462</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      )</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">461</td>
+                    <td class="num">463</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    if (isManderGrid(grid)) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">462</td>
+                    <td class="num">464</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      rv[[3]] &lt;- acceptableGrid %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">463</td>
-                    <td class="coverage">2<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        dplyr::slice_min(AveSizeAlt) %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">464</td>
-                    <td class="coverage">2<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        dplyr::mutate(Criterion = "optimalAlt")</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
                     <td class="num">465</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      rv[[4]] &lt;- acceptableGrid %&gt;%</pre>
+                      <pre class="language-r">        dplyr::slice_min(AveSizeAlt) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">466</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        dplyr::slice_min(nTotal) %&gt;%</pre>
+                      <pre class="language-r">        dplyr::mutate(Criterion = "optimalAlt")</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">467</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        dplyr::slice_min(AveSizeAlt) %&gt;%</pre>
+                      <pre class="language-r">      rv[[4]] &lt;- acceptableGrid %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">468</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
+                      <pre class="language-r">        dplyr::slice_min(nTotal) %&gt;%</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">469</td>
+                    <td class="coverage">2<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        dplyr::slice_min(AveSizeAlt) %&gt;%</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">470</td>
+                    <td class="coverage">2<em>x</em></td>
+                    <td class="col-sm-12">
                       <pre class="language-r">        dplyr::mutate(Criterion = "minimaxAlt")</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">469</td>
+                    <td class="num">471</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    }</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">470</td>
+                    <td class="num">472</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    rv &lt;- dplyr::bind_rows(rv)</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">471</td>
+                    <td class="num">473</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    class(rv) &lt;- class(grid)</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">472</td>
+                    <td class="num">474</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    futile.logger::flog.debug("Exit")</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">473</td>
+                    <td class="num">475</td>
                     <td class="coverage">5<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    return(rv)</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">474</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">  }</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
-                    <td class="num">475</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">}</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
                     <td class="num">476</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r"></pre>
+                      <pre class="language-r">  }</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">477</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' Plot the power curve(s) for the given design(s)</pre>
+                      <pre class="language-r">}</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">478</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'</pre>
+                      <pre class="language-r"></pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">479</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param grid the tibble containing the designs to be</pre>
+                      <pre class="language-r">#' Plot the power curve(s) for the given design(s)</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">480</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'  plotted</pre>
+                      <pre class="language-r">#'</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">481</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @param probs the response rates for which the rejection probabilities are to</pre>
+                      <pre class="language-r">#' @param grid the tibble containing the designs to be</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">482</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' be plotted</pre>
+                      <pre class="language-r">#'  plotted</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">483</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @return the ggplot object containing the power curve(s)</pre>
+                      <pre class="language-r">#' @param probs the response rates for which the rejection probabilities are to</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">484</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @examples</pre>
+                      <pre class="language-r">#' be plotted</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">485</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE) %&gt;%</pre>
+                      <pre class="language-r">#' @return the ggplot object containing the power curve(s)</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">486</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'   augmentGrid(cores = 2) %&gt;%</pre>
+                      <pre class="language-r">#' @examples</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">487</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'   obtainDesign() %&gt;%</pre>
+                      <pre class="language-r">#' createGrid(p0 = 0.05, p1 = 0.25, alpha = 0.05, beta = 0.2, mander = FALSE) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">488</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#'   powerPlot(probs = seq(0, 0.5, 0.025))</pre>
+                      <pre class="language-r">#'   augmentGrid(cores = 2) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">489</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">#' @export</pre>
+                      <pre class="language-r">#'   obtainDesign() %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">490</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
+                      <pre class="language-r">#'   powerPlot(probs = seq(0, 0.5, 0.025))</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">491</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">#' @export</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">492</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
                       <pre class="language-r">powerPlot &lt;- function(grid, probs = seq(0, 1, 0.01)) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">491</td>
+                    <td class="num">493</td>
                     <td class="coverage">4<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  futile.logger::flog.debug("Entry")</pre>
                     </td>
                   </tr>
                   <tr class="missed">
-                    <td class="num">492</td>
+                    <td class="num">494</td>
                     <td class="coverage">!</td>
                     <td class="col-sm-12">
                       <pre class="language-r">  if (is.null(grid)) stop("grid cannot be null")</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">493</td>
+                    <td class="num">495</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  if (!isBasicGrid(grid)) stop("Grid must be a tibble created by createGrid()")</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">494</td>
+                    <td class="num">496</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r"></pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">495</td>
+                    <td class="num">497</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  if (isManderGrid(grid)) {</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">496</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">    plotData &lt;- grid %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">497</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::mutate(Design = c(seq_len(nrow(grid)))) %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
                     <td class="num">498</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::group_by(Design) %&gt;%</pre>
+                      <pre class="language-r">    plotData &lt;- grid %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">499</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::mutate(</pre>
+                      <pre class="language-r">      dplyr::mutate(Design = c(seq_len(nrow(grid)))) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">500</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        Label = paste0(</pre>
+                      <pre class="language-r">      dplyr::group_by(Design) %&gt;%</pre>
                     </td>
                   </tr>
-                  <tr class="never">
+                  <tr class="covered">
                     <td class="num">501</td>
-                    <td class="coverage"></td>
+                    <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          "(",</pre>
+                      <pre class="language-r">      dplyr::mutate(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">502</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          rFutility,</pre>
+                      <pre class="language-r">        Label = paste0(</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">503</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          " ",</pre>
+                      <pre class="language-r">          "(",</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">504</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          rSuccess,</pre>
+                      <pre class="language-r">          rFutility,</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">505</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          ")/",</pre>
+                      <pre class="language-r">          " ",</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">506</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          nStage1,</pre>
+                      <pre class="language-r">          rSuccess,</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">507</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          " ",</pre>
+                      <pre class="language-r">          ")/",</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">508</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          rTotal,</pre>
+                      <pre class="language-r">          nStage1,</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">509</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          "/",</pre>
+                      <pre class="language-r">          " ",</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">510</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">          nTotal</pre>
+                      <pre class="language-r">          rTotal,</pre>
                     </td>
                   </tr>
                   <tr class="never">
                     <td class="num">511</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        )</pre>
+                      <pre class="language-r">          "/",</pre>
                     </td>
                   </tr>
-                  <tr class="never">
+                  <tr class="covered">
                     <td class="num">512</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      ) %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">513</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::select(</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">514</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        Design,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">515</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        Label,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">516</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        nStage1,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">517</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        rFutility,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">518</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        rSuccess,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">519</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        nTotal,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">520</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        rTotal,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">521</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        Alpha,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">522</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        Beta,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">523</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        p0,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">524</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        p1</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
-                    <td class="num">525</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      ) %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">526</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      tidyr::expand(</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">527</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        tidyr::nesting(</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">528</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          Design,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">529</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          Label,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">530</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          nStage1,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">531</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          rFutility,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">532</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          rSuccess,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">533</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          nTotal,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">534</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          rTotal,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">535</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          Alpha,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">536</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          Beta,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">537</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          p0,</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">538</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          p1</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
-                    <td class="num">539</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        ),</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">540</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        pResponse = probs</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
-                    <td class="num">541</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      ) %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">542</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::group_by(Design, pResponse) %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">543</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::mutate(</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">544</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        pReject = 1 - manderProb(pResponse, nStage1, rFutility, rSuccess, nTotal, rTotal)</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
-                    <td class="num">545</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      ) %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">546</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::ungroup()</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
-                    <td class="num">547</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">  } else {</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">548</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">    plotData &lt;- grid %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">549</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::mutate(Design = seq_len(nrow(grid))) %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">550</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::group_by(Design) %&gt;%</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">551</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      dplyr::mutate(</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">552</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">        Label = paste0(</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">553</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          rFutility,</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
-                    <td class="num">554</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          "/",</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">555</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          nStage1,</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
-                    <td class="num">556</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          " ",</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">557</td>
-                    <td class="coverage">1<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          rTotal,</pre>
-                    </td>
-                  </tr>
-                  <tr class="never">
-                    <td class="num">558</td>
-                    <td class="coverage"></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">          "/",</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">559</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          nTotal</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">560</td>
+                    <td class="num">513</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        )</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">561</td>
+                    <td class="num">514</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      ) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">562</td>
+                    <td class="num">515</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      dplyr::select(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">563</td>
+                    <td class="num">516</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        Design,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">564</td>
+                    <td class="num">517</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        Label,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">565</td>
+                    <td class="num">518</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        nStage1,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">566</td>
+                    <td class="num">519</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        rFutility,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">567</td>
+                    <td class="num">520</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        rSuccess,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">521</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        nTotal,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">568</td>
+                    <td class="num">522</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        rTotal,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">569</td>
+                    <td class="num">523</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        Alpha,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">570</td>
+                    <td class="num">524</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        Beta,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">571</td>
+                    <td class="num">525</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        p0,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">572</td>
+                    <td class="num">526</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        p1</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">573</td>
+                    <td class="num">527</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      ) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">574</td>
+                    <td class="num">528</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      tidyr::expand(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">575</td>
+                    <td class="num">529</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        tidyr::nesting(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">576</td>
+                    <td class="num">530</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          Design,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">577</td>
+                    <td class="num">531</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          Label,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">578</td>
+                    <td class="num">532</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          nStage1,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">579</td>
+                    <td class="num">533</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          rFutility,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">580</td>
+                    <td class="num">534</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          rSuccess,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">535</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          nTotal,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">581</td>
+                    <td class="num">536</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          rTotal,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">582</td>
+                    <td class="num">537</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          Alpha,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">583</td>
+                    <td class="num">538</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          Beta,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">584</td>
+                    <td class="num">539</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          p0,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">585</td>
+                    <td class="num">540</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">          p1</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">586</td>
+                    <td class="num">541</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        ),</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">587</td>
+                    <td class="num">542</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        pResponse = probs</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">588</td>
+                    <td class="num">543</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      ) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">589</td>
+                    <td class="num">544</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      dplyr::group_by(Design, pResponse) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">590</td>
+                    <td class="num">545</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      dplyr::mutate(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">591</td>
+                    <td class="num">546</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">        pReject = 1 - simonProb(pResponse, nStage1, rFutility, nTotal, rTotal)</pre>
+                      <pre class="language-r">        pReject = 1 - manderProb(pResponse, nStage1, rFutility, rSuccess, nTotal, rTotal)</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">592</td>
+                    <td class="num">547</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      ) %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">593</td>
+                    <td class="num">548</td>
                     <td class="coverage">1<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      dplyr::ungroup()</pre>
                     </td>
                   </tr>
                   <tr class="never">
+                    <td class="num">549</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">  } else {</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">550</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">    plotData &lt;- grid %&gt;%</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">551</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      dplyr::mutate(Design = seq_len(nrow(grid))) %&gt;%</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">552</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      dplyr::group_by(Design) %&gt;%</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">553</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      dplyr::mutate(</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">554</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        Label = paste0(</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">555</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          rFutility,</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">556</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          "/",</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">557</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          nStage1,</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">558</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          " ",</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">559</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          rTotal,</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">560</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          "/",</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">561</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          nTotal</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">562</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        )</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">563</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      ) %&gt;%</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">564</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      dplyr::select(</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">565</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        Design,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">566</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        Label,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">567</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        nStage1,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">568</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        rFutility,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">569</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        nTotal,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">570</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        rTotal,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">571</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        Alpha,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">572</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        Beta,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">573</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        p0,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">574</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        p1</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">575</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      ) %&gt;%</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">576</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      tidyr::expand(</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">577</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        tidyr::nesting(</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">578</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          Design,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">579</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          Label,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">580</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          nStage1,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">581</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          rFutility,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">582</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          nTotal,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">583</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          rTotal,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">584</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          Alpha,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">585</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          Beta,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">586</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          p0,</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">587</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">          p1</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">588</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        ),</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">589</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        pResponse = probs</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">590</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      ) %&gt;%</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">591</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      dplyr::group_by(Design, pResponse) %&gt;%</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">592</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      dplyr::mutate(</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">593</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">        pReject = 1 - simonProb(pResponse, nStage1, rFutility, nTotal, rTotal)</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
                     <td class="num">594</td>
+                    <td class="coverage"></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      ) %&gt;%</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">595</td>
+                    <td class="coverage">1<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">      dplyr::ungroup()</pre>
+                    </td>
+                  </tr>
+                  <tr class="never">
+                    <td class="num">596</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  }</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">595</td>
+                    <td class="num">597</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">  plot &lt;- plotData %&gt;%</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">596</td>
+                    <td class="num">598</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    ggplot2::ggplot() +</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">597</td>
+                    <td class="num">599</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    ggplot2::geom_line(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">598</td>
+                    <td class="num">600</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      ggplot2::aes(</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">599</td>
+                    <td class="num">601</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        x = pResponse,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">600</td>
+                    <td class="num">602</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        y = pReject,</pre>
                     </td>
                   </tr>
                   <tr class="covered">
-                    <td class="num">601</td>
+                    <td class="num">603</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
                       <pre class="language-r">        colour = Label</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">602</td>
+                    <td class="num">604</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">      )</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">603</td>
+                    <td class="num">605</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">    ) +</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">604</td>
-                    <td class="coverage">2<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">    ggplot2::labs(</pre>
-                    </td>
-                  </tr>
-                  <tr class="covered">
-                    <td class="num">605</td>
-                    <td class="coverage">2<em>x</em></td>
-                    <td class="col-sm-12">
-                      <pre class="language-r">      x = "True response rate",</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">606</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">      y = "p(Signal detected)"</pre>
+                      <pre class="language-r">    ggplot2::labs(</pre>
                     </td>
                   </tr>
-                  <tr class="never">
+                  <tr class="covered">
                     <td class="num">607</td>
-                    <td class="coverage"></td>
+                    <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    ) +</pre>
+                      <pre class="language-r">      x = "True response rate",</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">608</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    ggplot2::theme_light() +</pre>
+                      <pre class="language-r">      y = "p(Signal detected)"</pre>
                     </td>
                   </tr>
-                  <tr class="covered">
+                  <tr class="never">
                     <td class="num">609</td>
-                    <td class="coverage">2<em>x</em></td>
+                    <td class="coverage"></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">    ggplot2::theme(legend.title = ggplot2::element_blank())</pre>
+                      <pre class="language-r">    ) +</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">610</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
-                      <pre class="language-r">  futile.logger::flog.debug("Exit")</pre>
+                      <pre class="language-r">    ggplot2::theme_light() +</pre>
                     </td>
                   </tr>
                   <tr class="covered">
                     <td class="num">611</td>
                     <td class="coverage">2<em>x</em></td>
                     <td class="col-sm-12">
+                      <pre class="language-r">    ggplot2::theme(legend.title = ggplot2::element_blank())</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">612</td>
+                    <td class="coverage">2<em>x</em></td>
+                    <td class="col-sm-12">
+                      <pre class="language-r">  futile.logger::flog.debug("Exit")</pre>
+                    </td>
+                  </tr>
+                  <tr class="covered">
+                    <td class="num">613</td>
+                    <td class="coverage">2<em>x</em></td>
+                    <td class="col-sm-12">
                       <pre class="language-r">  return(plot)</pre>
                     </td>
                   </tr>
                   <tr class="never">
-                    <td class="num">612</td>
+                    <td class="num">614</td>
                     <td class="coverage"></td>
                     <td class="col-sm-12">
                       <pre class="language-r">}</pre>
