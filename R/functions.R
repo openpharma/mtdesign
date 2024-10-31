@@ -100,9 +100,7 @@ createGrid <- function(p0,
 
   # Initialise
   if (is.na(beta)) beta <- 1 - power
-  if (is.na(nMin) | is.na(nMax)) {
-    bounds <- searchBounds(p0, p1, alpha, beta, twoSided = FALSE)
-  }
+  bounds <- searchBounds(p0, p1, alpha, beta, twoSided = FALSE)
   if (is.na(nMin)) {
     nMin <- bounds["min"]
     futile.logger::flog.debug(paste0("Using default value for nMin: ", nMin))

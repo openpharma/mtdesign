@@ -49,3 +49,15 @@ test_that("createGrid works", {
   # All rows unique
   expect_identical(x, x %>% dplyr::distinct())
 })
+
+test_that("createGrid works when both nMin and nMax are specified and logging is enabled", {
+  # See https://github.com/openpharma/mtdesign/issues/8
+
+  oldThreshold <- futile.logger::flog.threshold(futile.logger::TRACE)
+
+  expect_no_error(
+    createGrid(p0 = 0.1, p1 = 0.4, alpha = 0.1, beta = 0.1, nMin = 20, nMax = 30)
+  )
+
+  withr::defer(futile.logger::flog.threshold(oldThreshold))
+})
