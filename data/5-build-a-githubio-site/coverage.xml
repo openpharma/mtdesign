@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage line-rate="0.955223880597015" branch-rate="0" lines-covered="448" lines-valid="469" branches-covered="0" branches-valid="0" complexity="0" version="3.6.1" timestamp="2023-01-10 14:23:16">
-  <sources/>
+<!DOCTYPE coverage SYSTEM "https://raw.githubusercontent.com/cobertura/cobertura/master/cobertura/src/site/htdocs/xml/coverage-04.dtd">
+<coverage line-rate="0.955223880597015" branch-rate="0" lines-covered="448" lines-valid="469" branches-covered="0" branches-valid="0" complexity="0" version="3.6.4" timestamp="2024-10-31 11:06:45.983059">
+  <sources>
+    <source>/__w/mtdesign/mtdesign/mtdesign</source>
+  </sources>
   <packages>
     <package name="mtdesign" line-rate="0.955223880597015" branch-rate="0" complexity="0">
       <classes>
         <class name="functions.R" filename="R/functions.R" line-rate="0.94488188976378" branch-rate="0" complexity="0">
           <methods>
-            <method name=".onLoad" signature="" line-rate="0" branch-rate="0">
+            <method name=".onLoad" signature="" line-rate="0" branch-rate="0" complexity="0">
               <lines>
                 <line number="5" hits="0" branch="false"/>
                 <line number="6" hits="0" branch="false"/>
                 <line number="7" hits="0" branch="false"/>
               </lines>
             </method>
-            <method name=".onUnload" signature="" line-rate="0" branch-rate="0">
+            <method name=".onUnload" signature="" line-rate="0" branch-rate="0" complexity="0">
               <lines>
                 <line number="11" hits="0" branch="false"/>
               </lines>
             </method>
-            <method name="isBasicGrid" signature="" line-rate="1" branch-rate="0">
+            <method name="isBasicGrid" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
                 <line number="15" hits="71" branch="false"/>
                 <line number="16" hits="71" branch="false"/>
@@ -29,7 +32,7 @@
                 <line number="22" hits="70" branch="false"/>
               </lines>
             </method>
-            <method name="isManderGrid" signature="" line-rate="1" branch-rate="0">
+            <method name="isManderGrid" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
                 <line number="26" hits="37" branch="false"/>
                 <line number="27" hits="37" branch="false"/>
@@ -38,7 +41,7 @@
                 <line number="30" hits="37" branch="false"/>
               </lines>
             </method>
-            <method name="isAugmented" signature="" line-rate="1" branch-rate="0">
+            <method name="isAugmented" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
                 <line number="34" hits="18" branch="false"/>
                 <line number="35" hits="18" branch="false"/>
@@ -52,7 +55,7 @@
                 <line number="44" hits="17" branch="false"/>
               </lines>
             </method>
-            <method name="createGrid" signature="" line-rate="0.989010989010989" branch-rate="0">
+            <method name="createGrid" signature="" line-rate="0.989010989010989" branch-rate="0" complexity="0">
               <lines>
                 <line number="76" hits="32" branch="false"/>
                 <line number="78" hits="1" branch="false"/>
@@ -147,7 +150,7 @@
                 <line number="193" hits="8" branch="false"/>
               </lines>
             </method>
-            <method name="searchBounds" signature="" line-rate="1" branch-rate="0">
+            <method name="searchBounds" signature="" line-rate="1" branch-rate="0" complexity="0">
               <lines>
                 <line number="210" hits="16" branch="false"/>
                 <line number="211" hits="1" branch="false"/>
@@ -160,7 +163,7 @@
                 <line number="224" hits="16" branch="false"/>
               </lines>
             </method>
-            <method name="augmentGrid" signature="" line-rate="0.948275862068966" branch-rate="0">
+            <method name="augmentGrid" signature="" line-rate="0.948275862068966" branch-rate="0" complexity="0">
               <lines>
                 <line number="246" hits="8" branch="false"/>
                 <line number="247" hits="8" branch="false"/>
@@ -222,7 +225,7 @@
                 <line number="314" hits="8" branch="false"/>
               </lines>
             </method>
-            <method name="obtainDesign" signature="" line-rate="0.848101265822785" branch-rate="0">
+            <method name="obtainDesign" signature="" line-rate="0.848101265822785" branch-rate="0" complexity="0">
               <lines>
                 <line number="377" hits="22" branch="false"/>
                 <line number="379" hits="22" branch="false"/>
@@ -305,7 +308,7 @@
                 <line number="475" hits="5" branch="false"/>
               </lines>
             </method>
-            <method name="powerPlot" signature="" line-rate="0.991525423728814" branch-rate="0">
+            <method name="powerPlot" signature="" line-rate="0.991525423728814" branch-rate="0" complexity="0">
               <lines>
                 <line number="493" hits="4" branch="false"/>
                 <line number="494" hits="0" branch="false"/>
