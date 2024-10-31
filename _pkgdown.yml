@@ -3,9 +3,3 @@ url: https://openpharma.github.io/mtdesign
 
 template:
   bootstrap: 5
-  bootswatch: flatly
-
-navbar:
-  right:
-    - icon: fa-github
-      href: https://github.com/openpharma/mtdesign

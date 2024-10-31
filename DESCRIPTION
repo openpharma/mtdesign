@@ -1,12 +1,12 @@
 Package: mtdesign
 Type: Package
 Title: Mander and Thompson Designs
-Version: 0.1.1
+Version: 0.1.2
 Date: 2022-10-04
 Authors@R: person(
              given = "John",
              family = "Kirkpatrick",
-             email = "john.kirkpatrick@roche.com",
+             email = "mtdesign@puzzledface.net",
              role = c("aut", "cre"),
              comment = c(ORCID = "0000-0001-7790-3708")
            )
@@ -22,7 +22,7 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/openpharma/mtdesign
 BugReports: https://github.com/openpharma/mtdesign/issues
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Imports: 
     dplyr,
     futile.logger,
