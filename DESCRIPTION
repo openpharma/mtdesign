@@ -32,7 +32,8 @@ Imports:
     Rcpp,
     rlang,
     tibble,
-    tidyr
+    tidyr,
+    withr
 LinkingTo: 
     Rcpp,
     BH
