@@ -22,7 +22,7 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/openpharma/mtdesign
 BugReports: https://github.com/openpharma/mtdesign/issues
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Imports: 
     dplyr,
     futile.logger,
