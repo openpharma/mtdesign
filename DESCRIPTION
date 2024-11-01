@@ -2,7 +2,7 @@ Package: mtdesign
 Type: Package
 Title: Mander and Thompson Designs
 Version: 0.1.2
-Date: 2022-10-04
+Date: 2024-11-01
 Authors@R: person(
              given = "John",
              family = "Kirkpatrick",

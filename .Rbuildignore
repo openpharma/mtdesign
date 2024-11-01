@@ -1,6 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.github$
+^\.gitleaksignore$
 ^README.Rmd
 ^cran-comments\.md$
 ^codecov.yml$
