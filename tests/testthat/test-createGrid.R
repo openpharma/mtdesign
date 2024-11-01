@@ -59,5 +59,5 @@ test_that("createGrid works when both nMin and nMax are specified and logging is
     createGrid(p0 = 0.1, p1 = 0.4, alpha = 0.1, beta = 0.1, nMin = 20, nMax = 30)
   )
 
-  defer(futile.logger::flog.threshold(oldThreshold))
+  withr::defer(futile.logger::flog.threshold(oldThreshold))
 })
