@@ -31,3 +31,4 @@ vignettes/*.html
 vignettes/*.md
 .vscode/
 lib/
+.Rproj.user
