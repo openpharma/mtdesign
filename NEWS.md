@@ -1,5 +1,8 @@
 # mtdesign 
 
+## Version 0.1.3
+* Update tests in preparation for ggplot2 version 4 release
+
 ## Version 0.1.2
 *  Update author email address
 
