@@ -1,9 +1,8 @@
 # Submission
-This is a minor patch to update the maintainer's contact details as a result of a change of employer.  A couple of minor bugs have also been fixed.
-
+This is a minor patch to update unit tests in preparation for the release of `ggplot2` v4.   The expected class of two objects has been updated.  There are no other changes.
 ## R CMD check results
 
-Duration: 4m 31.5s
+Duration: 37.3s
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
