@@ -51,10 +51,10 @@ isAugmented <- function(grid) {
 #' @param alpha the desired (one-sided) type 1 error rate
 #' @param beta the desired type 2 error rate
 #' @param power an alternative to \code{beta}
-#' @param nMin the lower bound for the search grid.  If \code{NA},
-#' \code{searchBounds} is called to provide an appropriate value
-#' @param nMax the lower bound for the search grid.  If \code{NA},
-#' \code{searchBounds} is called to provide an appropriate value
+#' @param nMin the lower bound for the search grid.  If \code{NA}
+#' \code{searchBounds}, is called to provide an appropriate value
+#' @param nMax the lower bound for the search grid.  If \code{NA}
+#' \code{searchBounds}, is called to provide an appropriate value
 #' @param mander is a Mander & Thompson or a Simon's design required?
 #' @return a tibble.  See Usage notes for a list and description of columns.
 #' @examples
