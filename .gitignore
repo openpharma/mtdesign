@@ -32,3 +32,5 @@ vignettes/*.md
 .vscode/
 lib/
 .Rproj.user
+\renv
+renv.lock
