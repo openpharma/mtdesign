@@ -1,8 +1,8 @@
 Package: mtdesign
 Type: Package
 Title: Mander and Thompson Designs
-Version: 0.1.3
-Date: 2025-08-21
+Version: 0.1.4
+Date: 2025-12-22
 Authors@R: person(
              given = "John",
              family = "Kirkpatrick",
@@ -25,7 +25,6 @@ BugReports: https://github.com/openpharma/mtdesign/issues
 RoxygenNote: 7.3.2
 Imports: 
     dplyr,
-    futile.logger,
     ggplot2,
     magrittr,
     methods,

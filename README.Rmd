@@ -152,11 +152,6 @@ The `mtdesign` package consists of three main functions:
 * `augmentGrid`takes a grid created by `createGrid` and adds columns for probability of early termination, Type 1 error, Type 2 error and expected sample size to it.
 * `obtainDesign` takes an augmented grid and identifies the optimal and minimax designs
 
-## Error and warning messages and logging
-The `mtdesign` package supports logging via the `futile.logger` package [@LOGGER].  Most functions simply report Entry and Exit at the `DEBUG` level.  
-
-The `augmentGrid` function reports steps of the parallelisation process at the `TRACE` level.
-
 ## Parallelisation
 There is no known closed form solution to obtaining solutions to either Simon's original equations nor Mander & Thompson's extensions.  The `mtdesign` package uses a brute force approach to evaluate the operating characteristics of all reasonable potential designs.  The grids can be quickly become large, particularly for Mander & Thompson designs.  For example, `createGrid(0.2, 0.4, alpha=0.1, beta=0.1)` creates a grid of almost 11 million candidate designs.  `mtdesign` uses paralellisation to attempt to speed up the evaluation of candidate designs.  
 

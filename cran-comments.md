@@ -1,5 +1,5 @@
 # Submission
-This is a minor patch to update unit tests in preparation for the release of `ggplot2` v4.   The expected class of two objects has been updated.  There are no other changes.
+This is a minor patch to remove the dependency on `futile.logger` at the CRAN team's request.
 ## R CMD check results
 
 Duration: 37.3s

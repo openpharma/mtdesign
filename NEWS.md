@@ -1,5 +1,8 @@
 # mtdesign 
 
+## Version 0.1.4
+* Removed dependency on futile.logger at request of the CRAN team.
+
 ## Version 0.1.3
 * Update tests in preparation for ggplot2 version 4 release
 

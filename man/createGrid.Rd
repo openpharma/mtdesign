@@ -12,7 +12,8 @@ createGrid(
   power = ifelse(is.na(beta), 0.9, 1 - beta),
   nMin = NA,
   nMax = NA,
-  mander = TRUE
+  mander = TRUE,
+  verbose = FALSE
 )
 }
 \arguments{
@@ -33,6 +34,8 @@ createGrid(
 \code{searchBounds}, is called to provide an appropriate value}
 
 \item{mander}{is a Mander & Thompson or a Simon's design required?}
+
+\item{verbose}{print messages describing workflow?}
 }
 \value{
 a tibble.  See Usage notes for a list and description of columns.
